@@ -6,18 +6,24 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 
+/**
+ * @ Author      : Zink
+ * @ Date        : Created in 16:28 2019/8/9
+ * @ Description :
+ * @ Version     : 1.0
+ **/
 @Data
 @Entity
 @Slf4j
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
-@Table(name = "FundManager")
-public class FundManager {
+@Table(name = "Instrument")
+public class Instrument {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String symbol;
     private String name;
-    private String password;
-    private float balance;
-
+    @Enumerated(EnumType.STRING)
+    private InstrumentType type;
 }
