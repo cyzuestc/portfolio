@@ -1,0 +1,41 @@
+body {
+    font-size: 16px;
+    font-family: Arial;
+}
+
+a {
+    color: #999;
+}
+
+.DeepBlueColor {
+    color: #004985 !important;
+}
+
+nav.top {
+    background: linear-gradient(to bottom right, #00bdf2, #00b3f0 18%, #0066b3 77%, #004985);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+nav.top span, nav.top a {
+    margin: 0px 10px 0 10px;
+    color: #999;
+}
+
+nav.top a:hover {
+    color: #004985;
+    text-decoration: none;
+}
+
+.breadcrumb {
+    background: #004985;
+}
+
+.breadcrumb :hover {
+    color: snow;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
