@@ -22,6 +22,14 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*-- end reset --*/
+
+.breadcrumb > li + li:before {
+	color: #CCCCCC;
+	content: "/ ";
+	padding: 0 5px;
+	display:inline-block;
+}
+
 body {
 font-family:Verdana;  
 	 'Text Me One', sans-serif;
@@ -32,7 +40,7 @@ font-family:Verdana;
 	background-size:cover;
 	background-attachment: fixed;
 }
-body,html,.wrapper { height:95%;}
+body,html,.wrapper { height:96%;}
 /*-- main --*/ 
 .main-w3layouts {
     padding: 3em 0 0;

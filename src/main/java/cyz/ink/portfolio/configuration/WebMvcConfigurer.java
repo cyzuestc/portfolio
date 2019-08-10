@@ -15,6 +15,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(getLoginInterceptor()).addPathPatterns("/admin**");
+        //拦截后台,必须先登录Admin才能访问页面
+//        registry.addInterceptor(getLoginInterceptor()).addPathPatterns("/admin**");
     }
 }

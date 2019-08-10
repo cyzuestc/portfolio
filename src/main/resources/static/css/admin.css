@@ -25,8 +25,8 @@ body {
     float: left;
 }
 a:hover{
-     text-decoration: none;
- }
+    text-decoration: none;
+}
 .breadcrumb > li + li:before {
     color: #CCCCCC;
     content: "/ ";

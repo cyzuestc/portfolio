@@ -14,7 +14,7 @@ $(function () {
         methods:{
             list:function () {
                 console.log("vue成功加载");
-                var url = "/getData";
+                var url = "/getFundManager";
                 axios.get(url).then(function (response) {
                     data4vue.beans =response.data;
                 });
