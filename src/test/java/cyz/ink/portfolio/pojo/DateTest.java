@@ -32,9 +32,9 @@ public class DateTest {
             Class.forName("com.mysql.jdbc.Driver");
             //建立连接,localhost为主机IP地址（本机），3306为mysql的端口号，
             //testdb为数据库的库名,characterEncoding=utf-8为字节编码集
-            //root为mysql的登录名，123456为mysql的登录密码
-            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio?characterEncoding=utf-8",
-                    "root","admin");
+            //root为mysql的登录名，123456为mysql的登录密码jdbc:mysql://localhost:3306/portfolio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/portfolio?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+                    "root","root");
             System.out.println(con);
 
             //执行SQL语句，？为占位符

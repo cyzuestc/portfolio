@@ -64,6 +64,7 @@ public class AddData {
         /**
          * add fund manager
          */
+        //fundManagerDAO.deleteAll();
         for (int i = 1; i < 100; i++) {
             FundManager fundManager = new FundManager();
             fundManager.setId(i);
@@ -94,6 +95,7 @@ public class AddData {
         /**
          * add hold
          */
+
         for (int i = 1; i < 100; i++) {
             Hold hold = new Hold();
             hold.setId(i);
@@ -108,6 +110,7 @@ public class AddData {
         /**
          * add currentPrice
          */
+
         for (int i = 1; i < 100; i++) {
             CurrentPrice currentPrice = new CurrentPrice();
 
@@ -131,8 +134,9 @@ public class AddData {
         /**
          * add History
          */
-        for (int i = 1; i < 100; i++) {
-            for (int j = 1; j < 100; j++) {
+
+        for (int i = 1; i < 50; i++) {
+            for (int j = 1; j < 10; j++) {
                 HistoryPrice historyPrice = new HistoryPrice();
 
                 float price = (float) (new Random().nextInt(200)*i);
@@ -149,7 +153,7 @@ public class AddData {
             }
         }
 
-        Assert.assertEquals(historyPriceDAO.findAll().size(),99*99);
+        //Assert.assertEquals(historyPriceDAO.findAll().size(),99*99);
 
         /**
          * add tradingHistory
@@ -165,7 +169,8 @@ public class AddData {
             float price = (float) (new Random().nextInt(200)*i);
             tradingHistory.setPrice(price);
             tradingHistory.setVolume(i*10);
+            tradingHistoryDAO.save(tradingHistory);
         }
-        Assert.assertEquals(tradingHistoryDAO.findAll().size(),99);
+        //Assert.assertEquals(tradingHistoryDAO.findAll().size(),99);
     }
 }
