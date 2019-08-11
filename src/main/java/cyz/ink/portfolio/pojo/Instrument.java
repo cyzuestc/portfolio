@@ -26,4 +26,36 @@ public class Instrument {
     private String name;
     @Enumerated(EnumType.STRING)
     private InstrumentType type;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public InstrumentType getType() {
+        return type;
+    }
+
+    public void setType(InstrumentType type) {
+        this.type = type;
+    }
 }
