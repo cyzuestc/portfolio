@@ -1,0 +1,155 @@
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** Starting PortfolioApplication on DESKTOP-8F8MI1H with PID 2864 (C:\Users\HJ\Desktop\Project\Project_git_workplace\Portfolio\target\classes started by HJ in C:\Users\HJ\Desktop\Project\Project_git_workplace\Portfolio)
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------DEBUG ***cyz.ink.portfolio.PortfolioApplication **** Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** No active profile set, falling back to default profiles: default
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Finished Spring Data repository scanning in 32ms. Found 7 repository interfaces.
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker **** Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2c8cc5e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.boot.web.embedded.tomcat.TomcatWebServer **** Tomcat initialized with port(s): 8080 (http)
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardService **** Starting service [Tomcat]
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardEngine **** Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] **** Initializing Spring embedded WebApplicationContext
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.springframework.web.context.ContextLoader **** Root WebApplicationContext: initialization completed in 554 ms
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***com.zaxxer.hikari.HikariDataSource **** HikariPool-3 - Starting...
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------WARN  ***com.zaxxer.hikari.util.DriverDataSource **** Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***com.zaxxer.hikari.HikariDataSource **** HikariPool-3 - Start completed.
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.jpa.internal.util.LogHelper **** HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.dialect.Dialect **** HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***cyz.ink.portfolio.pojo.AddData **** Starting AddData on DESKTOP-8F8MI1H with PID 14744 (started by HJ in C:\Users\HJ\Desktop\Project\Project_git_workplace\Portfolio)
+2019-08-11------哈哈哈，看我，看我------[main] ------DEBUG ***cyz.ink.portfolio.pojo.AddData **** Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***cyz.ink.portfolio.pojo.AddData **** No active profile set, falling back to default profiles: default
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.orm.jpa.LocalContainerEntityManagerFactoryBean **** Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.f.a.AutowiredAnnotationBeanPostProcessor **** Autowired annotation is not supported on static fields: private static final org.slf4j.Logger cyz.ink.portfolio.interceptor.LoginInterceptor.logger
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.f.a.AutowiredAnnotationBeanPostProcessor **** Autowired annotation is not supported on static fields: private static final org.slf4j.Logger cyz.ink.portfolio.interceptor.LoginInterceptor.logger
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.scheduling.concurrent.ThreadPoolTaskExecutor **** Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------WARN  ***o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration **** spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------WARN  ***org.thymeleaf.templatemode.TemplateMode **** [THYMELEAF][restartedMain] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.autoconfigure.OptionalLiveReloadServer **** LiveReload server is running on port 35729
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.boot.web.embedded.tomcat.TomcatWebServer **** Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** Started PortfolioApplication in 1.774 seconds (JVM running for 8999.905)
+2019-08-11------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.a.ConditionEvaluationDeltaLoggingListener **** Condition evaluation unchanged
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Finished Spring Data repository scanning in 78ms. Found 7 repository interfaces.
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker **** Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ce393ee6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***com.zaxxer.hikari.HikariDataSource **** HikariPool-1 - Starting...
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***com.zaxxer.hikari.util.DriverDataSource **** Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***com.zaxxer.hikari.HikariDataSource **** HikariPool-1 - Start completed.
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***org.hibernate.jpa.internal.util.LogHelper **** HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***org.hibernate.Version **** HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***org.hibernate.cfg.Environment **** HHH000206: hibernate.properties not found
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***org.hibernate.annotations.common.Version **** HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***org.hibernate.dialect.Dialect **** HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***o.s.orm.jpa.LocalContainerEntityManagerFactoryBean **** Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***o.s.b.f.a.AutowiredAnnotationBeanPostProcessor **** Autowired annotation is not supported on static fields: private static final org.slf4j.Logger cyz.ink.portfolio.interceptor.LoginInterceptor.logger
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***o.s.b.f.a.AutowiredAnnotationBeanPostProcessor **** Autowired annotation is not supported on static fields: private static final org.slf4j.Logger cyz.ink.portfolio.interceptor.LoginInterceptor.logger
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***o.s.scheduling.concurrent.ThreadPoolTaskExecutor **** Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration **** spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***org.thymeleaf.templatemode.TemplateMode **** [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***cyz.ink.portfolio.pojo.AddData **** Started AddData in 5.564 seconds (JVM running for 6.52)
+2019-08-11------哈哈哈，看我，看我------[main] ------INFO  ***o.h.hql.internal.QueryTranslatorFactoryInitiator **** HHH000397: Using ASTQueryTranslatorFactory
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[main] ------WARN  ***cyz.ink.portfolio.pojo.AddData **** Sun Aug 11 13:59:53 CST 2019
+2019-08-11------哈哈哈，看我，看我------[Thread-2] ------INFO  ***o.s.scheduling.concurrent.ThreadPoolTaskExecutor **** Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-11------哈哈哈，看我，看我------[Thread-2] ------INFO  ***o.s.orm.jpa.LocalContainerEntityManagerFactoryBean **** Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-11------哈哈哈，看我，看我------[Thread-2] ------INFO  ***com.zaxxer.hikari.HikariDataSource **** HikariPool-1 - Shutdown initiated...
+2019-08-11------哈哈哈，看我，看我------[Thread-2] ------INFO  ***com.zaxxer.hikari.HikariDataSource **** HikariPool-1 - Shutdown completed.
