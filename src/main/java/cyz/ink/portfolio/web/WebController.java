@@ -27,12 +27,4 @@ public class WebController {
     public String registor(){
         return "login/login";
     }
-    @GetMapping(value = "/tmall")
-    public String tmall(){
-        return "tmall/top";
-    }
-    @GetMapping(value = "/search")
-    public String search(){
-        return "tmall/search";
-    }
 }
