@@ -2,6 +2,7 @@ package cyz.ink.portfolio.web;
 
 import cyz.ink.portfolio.dao.CurrentPriceDAO;
 import cyz.ink.portfolio.dao.FundManagerDAO;
+import cyz.ink.portfolio.dao.InstrumentDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,9 @@ public class AdminController {
     CurrentPriceDAO currentPriceDAO;
     @Autowired
     FundManagerDAO fundManagerDAO;
+    @Autowired
+    InstrumentDAO instrumentDAO;
+
 
     @GetMapping(value = "/getData")
     public List getData(){
@@ -24,4 +28,6 @@ public class AdminController {
     public List getFundManager(){
         return fundManagerDAO.findAll();
     }
+
+
 }

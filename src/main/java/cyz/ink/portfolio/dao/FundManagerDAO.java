@@ -11,6 +11,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  **/
 
 public interface FundManagerDAO extends JpaRepository<FundManager,Integer> {
-
-
 }

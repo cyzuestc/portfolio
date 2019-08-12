@@ -9,6 +9,38 @@
 <body>
 
 <div id="workingAreaDiv">
+
+    <table class="table table-striped table-hover table-condensed">
+        <thead>
+        <tr class="info">
+            <th @click="sortInstrumentBy('id')">
+                <a href="#" class="columnName">id</a>
+            </th>
+            <th @click="sortInstrumentBy('symbol')">
+                <a href="#" class="columnName">symbol</a>
+            </th>
+            <th @click="sortInstrumentBy('name')">
+                <a href="#" class="columnName">名字</a>
+            </th>
+            <th @click="sortInstrumentBy('type')">
+                <a href="#" class="columnName">type</a>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="bean in instrumentBean">
+            <td>{{bean.id}}</td>
+            <td>{{bean.symbol}}</td>
+            <td>{{bean.name}}</td>
+            <td>{{bean.type}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button @click="addInstrumentPageStart()">
+        下一页
+    </button>
+
     <table class="table table-striped table-hover table-condensed">
             <thead>
             <tr class="success">
