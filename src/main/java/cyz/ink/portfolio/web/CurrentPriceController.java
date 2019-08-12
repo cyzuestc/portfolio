@@ -4,6 +4,7 @@ import cyz.ink.portfolio.pojo.CurrentPrice;
 import cyz.ink.portfolio.pojo.InstrumentType;
 import cyz.ink.portfolio.service.CurrentPriceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,8 +24,11 @@ public class CurrentPriceController {
     CurrentPriceService currentPriceService;
 
     @GetMapping(value = "/getCurrentPriceByType")
-    public List<CurrentPrice> getCurrentPriceByType(@RequestParam(name = "type", defaultValue = "Stocks") InstrumentType type) {
-        return currentPriceService.list(type);
+    public Page<CurrentPrice> getCurrentPriceByType(@RequestParam(name = "type", defaultValue = "Stocks") InstrumentType type,
+                                                    @RequestParam(name = "start", defaultValue = "start") int start,
+                                                    @RequestParam(name = "size", defaultValue = "size") int size) {
+        System.out.println(">>>>>>>>>>");
+        return currentPriceService.list(type,start,size);
     }
 
 }

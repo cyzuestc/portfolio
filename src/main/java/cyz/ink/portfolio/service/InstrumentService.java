@@ -29,8 +29,11 @@ public class InstrumentService {
      * @param type
      * @return
      */
-    public List<Instrument> getInstrumentByType(InstrumentType type){
-        return instrumentDAO.findAllByType(type);
+    public Page<Instrument> getInstrumentByType(InstrumentType type,int start, int size){
+        Sort sort = new Sort(Sort.Direction.DESC,"id");
+        Pageable pageable = new PageRequest(start,size,sort);
+        Page<Instrument> pageFromJPA = instrumentDAO.findAllByType(type,pageable);
+        return pageFromJPA;
     }
     /**
      * Paging

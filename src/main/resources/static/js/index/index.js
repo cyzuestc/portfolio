@@ -15,15 +15,20 @@ $(function () {
             this.list();
         },
         methods:{
+            addInstrumentPageStart: function () {
+                this.start += 1;
+                this.list();
+            },
             list:function () {
                 console.log("vue成功加载");
-                var url = "/getCurrentPriceByType?type=" + this.type;
+                var url = "/getCurrentPriceByType?type=" + this.type + "&start=" + this.start + "&size=" + this.size;
                 axios.get(url).then(function (response) {
-                    data4vue.beans =response.data;
+                    data4vue.beans =response.data.content;
                 });
             },
             changeInstrument: function (instrumentType) {
                 this.type = instrumentType;
+                this.start = 0;
                 this.list();
             },
             //sort data by price/high/low/open/close etc.
