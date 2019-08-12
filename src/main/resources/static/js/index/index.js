@@ -3,7 +3,7 @@ $(function () {
         beans:[],
         columnSorted:false,//column是否排序
         lastSortedColumn:'',//排序前先判断是否给新的一列字段排序.如果是,则倒序排序. 如果否,则是给同一列第二次排序
-        type:'',
+        type: 'Bonds',
         start:0,
         size:20
     };
@@ -17,26 +17,14 @@ $(function () {
         methods:{
             list:function () {
                 console.log("vue成功加载");
-                var url = "/getData";
+                var url = "/getCurrentPriceByType?type=" + this.type;
                 axios.get(url).then(function (response) {
                     data4vue.beans =response.data;
                 });
             },
-            listInstrumentByInstrumenttype: function () {
-                console.log("vue成功加载");
-                var url = "/getInstrumentsBy?type=" + this.type;
-                console.log(url);
-                axios.get(url).then(function (response) {
-                    data4vue.beans = response.data.content;
-                });
-            },
-            listCurrentPriceByInstrumenttype: function () {
-                console.log("vue成功加载");
-                var url = "/getCurrentPrices?type=" + this.type +"&start="+this.start+"&size=" + this.size;
-                console.log(url);
-                axios.get(url).then(function (response) {
-                    data4vue.beans = response.data.content;
-                });
+            changeInstrument: function (instrumentType) {
+                this.type = instrumentType;
+                this.list();
             },
             //sort data by price/high/low/open/close etc.
             sortBy:function(columnName){

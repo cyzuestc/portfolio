@@ -24,13 +24,7 @@ import java.util.List;
 public class InstrumentController {
     @Autowired
     InstrumentService instrumentService;
-    @Autowired
-    CurrentPriceService currentPriceService;
 
-    @GetMapping(value = "/getCurrentPriceBy/{type}")
-    public List<CurrentPrice> getInstrumentsByType(@PathVariable("type") InstrumentType type){
-        return currentPriceService.list(type);
-    }
     @GetMapping(value = "/getInstruments")
     public Page<Instrument> getInstruments(@RequestParam(name = "start", defaultValue = "0") int start,
                                            @RequestParam(name = "size", defaultValue = "10") int size) {
