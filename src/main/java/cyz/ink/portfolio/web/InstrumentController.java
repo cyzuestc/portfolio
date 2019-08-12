@@ -23,6 +23,5 @@ public class InstrumentController {
     public Page<Instrument> getInstruments(@RequestParam(name = "start", defaultValue = "0") int start,
                                            @RequestParam(name = "size", defaultValue = "10") int size) {
         return instrumentService.getInstruments(start, size);
-
     }
 }

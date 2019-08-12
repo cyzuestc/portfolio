@@ -30,6 +30,4 @@ public class Hold {
 
     @Column(name = "instrument_id")
     private int instrumentId;
-
-
 }
