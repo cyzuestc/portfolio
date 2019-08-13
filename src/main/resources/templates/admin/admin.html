@@ -28,7 +28,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="bean in instrumentBean">
+        <tr v-for="(bean,index) in instrumentBean">
             <td>{{bean.id}}</td>
             <td>{{bean.symbol}}</td>
             <td>{{bean.name}}</td>

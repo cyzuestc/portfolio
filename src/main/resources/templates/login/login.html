@@ -21,8 +21,20 @@
 			<input v-model="username" class="text" type="text" name="Username" placeholder="Username" required="">
 			<input v-model="password" class="text" type="password" name="password" placeholder="Password"
 				   required="">
-			<input @click="loginIn()" type="submit" value="Login In">
-			<p style="font-size: 12px;">Don't have a Account? <a href="#" style="font-size: 20px;">Sign up</a></p>
+
+            <div style="margin-top: 20px;color: red;">{{LoginInfo}}</div>
+
+            <input v-if="!isSignUp" @click="loginIn()" type="submit" value="Login In">
+
+            <input v-if="isSignUp" @click="signUp()" type="submit" value="Sign up">
+
+
+            <p style="font-size: 12px;" v-if="!isSignUp">Don't have a Account? <a @click="isSignUp=!isSignUp" href="#"
+                                                                                  style="font-size: 20px;">Sign Up</a>
+            </p>
+            <p style="font-size: 12px;" v-if="isSignUp">Already have a Account? <a @click="isSignUp=!isSignUp" href="#"
+                                                                                   style="font-size: 20px;">Login in</a>
+            </p>
 		</div>
 
 	</div>
