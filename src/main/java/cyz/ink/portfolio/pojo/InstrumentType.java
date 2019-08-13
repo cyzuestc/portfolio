@@ -32,4 +32,12 @@ public enum InstrumentType {
         this.type = type;
         this.index = index;
     }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 }

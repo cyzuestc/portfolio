@@ -30,4 +30,52 @@ public class TradingHistory {
     private int fundManagerId;
     @Column(name = "instrument_id")
     private int instrumentId;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getFundManagerId() {
+        return fundManagerId;
+    }
+
+    public void setFundManagerId(int fundManagerId) {
+        this.fundManagerId = fundManagerId;
+    }
+
+    public int getInstrumentId() {
+        return instrumentId;
+    }
+
+    public void setInstrumentId(int instrumentId) {
+        this.instrumentId = instrumentId;
+    }
 }
