@@ -26,5 +26,4 @@ public class Instrument {
     private String name;
     @Enumerated(EnumType.STRING)
     private InstrumentType type;
-
 }

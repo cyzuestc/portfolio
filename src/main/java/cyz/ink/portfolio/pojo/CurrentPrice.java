@@ -35,4 +35,76 @@ public class CurrentPrice {
     @Column(name = "instrument_id")
     private int instrumentId;
     Date date;
+
+    public int getId() {
+        return id;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public float getHigh() {
+        return high;
+    }
+
+    public float getLow() {
+        return low;
+    }
+
+    public float getOpen() {
+        return open;
+    }
+
+    public float getClose() {
+        return close;
+    }
+
+    public float getChanged() {
+        return changed;
+    }
+
+    public int getInstrumentId() {
+        return instrumentId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public void setHigh(float high) {
+        this.high = high;
+    }
+
+    public void setLow(float low) {
+        this.low = low;
+    }
+
+    public void setOpen(float open) {
+        this.open = open;
+    }
+
+    public void setClose(float close) {
+        this.close = close;
+    }
+
+    public void setChanged(float changed) {
+        this.changed = changed;
+    }
+
+    public void setInstrumentId(int instrumentId) {
+        this.instrumentId = instrumentId;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

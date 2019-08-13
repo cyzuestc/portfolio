@@ -30,4 +30,36 @@ public class Hold {
 
     @Column(name = "instrument_id")
     private int instrumentId;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public int getFundManagerId() {
+        return fundManagerId;
+    }
+
+    public void setFundManagerId(int fundManagerId) {
+        this.fundManagerId = fundManagerId;
+    }
+
+    public int getInstrumentId() {
+        return instrumentId;
+    }
+
+    public void setInstrumentId(int instrumentId) {
+        this.instrumentId = instrumentId;
+    }
 }
