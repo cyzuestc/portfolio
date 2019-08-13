@@ -5,7 +5,10 @@ $(function () {
         lastSortedColumn:'',//排序前先判断是否给新的一列字段排序.如果是,则倒序排序. 如果否,则是给同一列第二次排序
         type: 'Bonds',
         start:0,
-        size:20
+        size:10,
+        selected:[],
+        selectAll:false,
+        totalPrice:0
     };
 
     var vue = new Vue({
@@ -15,8 +18,41 @@ $(function () {
             this.list();
         },
         methods:{
+            select: function() {
+                this.totalPrice = 0;
+                console.log(this.selected.length);
+                for(var i = 0; i < this.selected.length; i++){
+                    this.totalPrice += this.selected[i].price;
+                }
+                console.log(this.totalPrice);
+            },
+            sortUp: function(bean) {
+                console.log(bean);
+                console.log(this.beans);
+                var index = this.beans.indexOf(bean);
+                console.log(index);
+                if(this.beans.length > 1 && index !== 0) {
+                    var temp = this.beans[index - 1];
+                    this.beans[index - 1] = this.beans[index];
+                    this.beans[index] = temp;
+                }
+            },
+            sortDown: function() {
+
+            },
+            add2Portfolio: function() {
+              if(this.selected.length < 0) {
+                  return;
+              } else {
+
+              }
+            },
             addInstrumentPageStart: function () {
                 this.start += 1;
+                this.list();
+            },
+            decreaseInstrumentPageStart: function() {
+                this.start -= 1;
                 this.list();
             },
             list:function () {
