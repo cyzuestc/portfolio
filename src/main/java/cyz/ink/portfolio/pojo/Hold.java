@@ -24,8 +24,10 @@ public class Hold {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int volume;
+
     @Column(name = "fundManager_id")
     private int fundManagerId;
+
     @Column(name = "instrument_id")
     private int instrumentId;
 

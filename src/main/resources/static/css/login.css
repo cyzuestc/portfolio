@@ -47,7 +47,7 @@ body,html,.wrapper { height:96%;}
 }
 .main-agileinfo {
     width: 35%;
-    margin: 3.5em auto;
+    margin: 0em auto;
     background: rgba(41, 5, 105, 0.43);
     background-size: cover;
 }
@@ -111,7 +111,7 @@ input[type="submit"] {
     padding: 1em;
     -webkit-appearance: none;
     width: 100%;
-    margin: 3em 0; 
+    margin: 3em 0;
 }
 input[type="submit"]:hover { 
     background: #00b3f0;
@@ -432,7 +432,7 @@ input[type="text"], input[type="password"] {
 }
 .main-agileinfo {
     width: 52%;
-    margin: 3em auto;
+    margin: em auto;
 }
 }
 @media(max-width:800px){

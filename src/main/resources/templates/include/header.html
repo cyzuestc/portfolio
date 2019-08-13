@@ -2,11 +2,54 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="/css/button.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link rel="shortcut icon" href="https://webinput.nie.netease.com/img/my/icon.png" >-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/header.css">
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript"  src="/js/bootstrap.min.js"></script>
     <script type="text/javascript"  src="/js/vue.min.js"></script>
     <script type="text/javascript"  src="/js/axios.min.js"></script>
     <script type="text/javascript"  src="/js/buttons.js"></script>
+    <script type="text/javascript" src="/js/include/header.js"></script>
+
+    <div id="navDiv">
+        <nav class="top">
+            <a href="#">
+            <span class="glyphicon glyphicon-shopping-cart DeepBlueColor">
+                CITI PORTFOLIO
+            </span>
+            </a>
+
+            <!--登陆后的状态栏-->
+            <span class="pull-right" v-if="currentFundManager != ''">
+                <span>
+                Hi! <span style="color: gold">{{currentFundManager.name}}</span>  Welcome to CSTC
+                </span>
+                <a href="#">My Portfolio</a>
+                <span class="glyphicon glyphicon-shoppong-cart DeepBlueColor">
+                    Balance  <strong style="color: gold">${{currentFundManager.balance}}</strong>
+                </span>
+                <a href="#" @click="fundManagerLogout()">Log Out</a>
+            </span>
+
+            <!--未登录的状态栏-->
+            <span class="pull-right" v-if="currentFundManager == ''">
+                <span>
+                Hi,Welcome to CSTC
+                <a href="/login">Sign In / Sign Up</a>
+                </span>
+            </span>
+
+
+        </nav>
+        <ol class="breadcrumb">
+            <li><a href="/index">Index</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/login">Login</a></li>
+        </ol>
+
+    </div>
+
 </template>
+
+

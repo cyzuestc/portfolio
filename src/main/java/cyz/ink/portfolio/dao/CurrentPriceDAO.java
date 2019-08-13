@@ -2,6 +2,7 @@ package cyz.ink.portfolio.dao;
 
 import cyz.ink.portfolio.pojo.CurrentPrice;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  * @ Author      : Zink
@@ -11,4 +12,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  **/
 
 public interface CurrentPriceDAO extends JpaRepository<CurrentPrice,Integer> {
+
 }

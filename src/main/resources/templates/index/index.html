@@ -8,44 +8,61 @@
 
 </head>
 <body>
-<div id="headDiv">
 
-    <ol class="breadcrumb">
-        <li class="active">主页</li>
-        <li><a href="/admin">管理员</a></li>
-        <li><a href="/login">登录</a></li>
-    </ol>
-
-    <h1>花旗金融信息服务有限公司</h1>
-</div>
 
 <div id="workingAreaDiv">
-    <table class="table table-striped table-hover table-condensed">
+
+    <ul class="nav nav-tabs">
+        <li role="presentation" :class="{'active':type=='Bonds'}" @click="changeInstrument('Bonds')"><a
+                href="/#">Bonds</a></li>
+        <li role="presentation" :class="{'active':type=='Stocks'}" @click="changeInstrument('Stocks')"><a href="/#">Stocks</a>
+        </li>
+        <li role="presentation" :class="{'active':type=='Futures'}" @click="changeInstrument('Futures')"><a href="/#">Futures</a>
+        </li>
+        <li role="presentation" :class="{'active':type=='ETFs'}" @click="changeInstrument('ETFs')"><a href="/#">ETFs</a>
+        </li>
+    </ul>
+
+    <table class="table table-striped table-condensed">
             <thead>
-            <tr class="success">
+            <tr style="background-color: #a6e1ec">
                 <th>
                     add
                 </th>
                 <th @click="sortBy('id')">
-                    <a href="#" class="columnName">id</a>
+                    <a href="#" class="columnName">id
+                        <span class="glyphicon glyphicon-resize-vertical"/>
+                    </a>
                 </th>
                 <th @click="sortBy('price')">
-                    <a href="#" class="columnName">price</a>
+                    <a href="#" class="columnName">price
+                        <span class="glyphicon glyphicon-resize-vertical"/>
+                    </a>
                 </th>
                 <th @click="sortBy('high')">
-                    <a href="#" class="columnName">high</a>
+                    <a href="#" class="columnName">high
+                        <span class="glyphicon glyphicon-resize-vertical"/>
+                    </a>
                 </th>
                 <th @click="sortBy('low')">
-                    <a href="#" class="columnName">low</a>
+                    <a href="#" class="columnName">low
+                        <span class="glyphicon glyphicon-resize-vertical"/>
+                    </a>
                 </th>
                 <th @click="sortBy('open')">
-                    <a href="#" class="columnName">open</a>
+                    <a href="#" class="columnName">open
+                        <span class="glyphicon glyphicon-resize-vertical"/>
+                    </a>
                 </th>
                 <th @click="sortBy('close')">
-                    <a href="#" class="columnName">close</a>
+                    <a href="#" class="columnName">close
+                        <span class="glyphicon glyphicon-resize-vertical"/>
+                    </a>
                 </th>
                 <th @click="sortBy('changed')">
-                    <a href="#" class="columnName">changed</a>
+                    <a href="#" class="columnName">changed
+                        <span class="glyphicon glyphicon-resize-vertical"/>
+                    </a>
                 </th>
             </tr>
             </thead>
