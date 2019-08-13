@@ -30,14 +30,18 @@
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">{{totalPrice}}</a></li>
-            <li><a href="#"  @click="select()">add to portfolio</a></li>
-        </ul>
-    </div>
-    </div>
-    <div class="text-uppercase text-bold">id selected: {{selected}}</div>
-    <table class="table table-striped table-hover table-condensed" id="table1">
+    <ul class="nav nav-tabs">
+        <li role="presentation" :class="{'active':type=='Bonds'}" @click="changeInstrument('Bonds')"><a
+                href="/#">Bonds</a></li>
+        <li role="presentation" :class="{'active':type=='Stocks'}" @click="changeInstrument('Stocks')"><a href="/#">Stocks</a>
+        </li>
+        <li role="presentation" :class="{'active':type=='Futures'}" @click="changeInstrument('Futures')"><a href="/#">Futures</a>
+        </li>
+        <li role="presentation" :class="{'active':type=='ETFs'}" @click="changeInstrument('ETFs')"><a href="/#">ETFs</a>
+        </li>
+    </ul>
+
+    <table class="table table-striped table-condensed">
             <thead>
             <tr style="background-color: #a6e1ec">
                 <th>
