@@ -1,6 +1,8 @@
 package cyz.ink.portfolio.dao;
 
 import cyz.ink.portfolio.pojo.CurrentPrice;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -12,5 +14,6 @@ import org.springframework.data.jpa.repository.Query;
  **/
 
 public interface CurrentPriceDAO extends JpaRepository<CurrentPrice,Integer> {
+    Page<CurrentPrice> findAll(Pageable pageable);
 
 }
