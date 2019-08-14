@@ -2,11 +2,6 @@ body {
     font-size: 16px;
     font-family: Arial;
 }
-
-a {
-    color: #999;
-}
-
 .DeepBlueColor {
     color: #004985 !important;
 }
@@ -19,7 +14,7 @@ nav.top {
 
 nav.top span, nav.top a {
     margin: 0px 10px 0 10px;
-    color: #999;
+    color: #ccc;
 }
 
 nav.top a:hover {
@@ -38,4 +33,19 @@ nav.top a:hover {
 a:hover {
     text-decoration: none;
 }
+
+#navDiv .breadcrumb a {
+    color: #afd9ee;
+}
+
+#workingAreaDiv {
+    font-size: 12px;
+}
+
+#workingAreaDiv table {
+    color: #fff;
+    font-size: 16px;
+    background-color: #004985;
+}
+
 

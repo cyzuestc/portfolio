@@ -56,4 +56,7 @@ public class InstrumentService {
         return null;
     }
 
+    public Instrument getInstrumentById(int id) {
+        return instrumentDAO.getOne(id);
+    }
 }

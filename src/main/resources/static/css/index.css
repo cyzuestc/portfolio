@@ -1,18 +1,50 @@
 *{margin:0;padding:0;}
 body {
-    /*font-family:Verdana;*/
-    /*'Text Me One', sans-serif;*/
-    /*#00bdf2,#00b3f0 18%,#0066b3 77%,#004985);*/
-    background: #00bdf2;
     background: -webkit-linear-gradient(to bottom right, #00bdf2,#00b3f0 18%,#0066b3 77%,#004985);
     background: linear-gradient(to bottom right, #00bdf2,#00b3f0 18%,#0066b3 77%,#004985);
     background-size:cover;
     background-attachment: fixed;
-    /*text-align: center;*/
 }
 
-#workingAreaDiv {
-    margin: 0 100px;
-    background-color: white;
-    font-size: 12px;
+#main {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+#instrumentAndChartDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+#instrumentsDiv {
+    margin-left: 20px;
+    display: inline-block;
+    /*width: 40%;*/
+}
+
+#chartDiv {
+    margin-right: 10px;
+    display: inline-block;
+    /*width: 40%;*/
+}
+
+#instrumentsDiv table {
+    height: 550px;
+}
+
+#workingAreaDiv td, th {
+    vertical-align: middle;
+}
+
+#workingAreaDiv thead, #workingAreaDiv thead a {
+    color: yellow;
+}
+
+#instrumentsDiv > ul > li > a {
+    color: #004985;
+    font-size: 18px;
+    font-weight: bold;
 }

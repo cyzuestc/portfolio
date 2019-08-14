@@ -10,7 +10,9 @@
 
 <div id="workingAreaDiv">
 
-    <table class="table table-striped table-hover table-condensed">
+    <input id="singleFile" style="width: 10em;" type="file" @change="getSingleFile($event)"/>
+
+    <table class="table ">
         <thead>
         <tr class="info">
             <th @click="sortInstrumentBy('id')">
@@ -41,20 +43,20 @@
         下一页
     </button>
 
-    <table class="table table-striped table-hover table-condensed">
+    <table class="table ">
             <thead>
             <tr class="success">
                 <th @click="sortBy('id')">
                     <a href="#" class="columnName">id</a>
                 </th>
                 <th @click="sortBy('name')">
-                    <a href="#" class="columnName">price</a>
+                    <a href="#" class="columnName">name</a>
                 </th>
                 <th @click="sortBy('password')">
-                    <a href="#" class="columnName">high</a>
+                    <a href="#" class="columnName">password</a>
                 </th>
                 <th @click="sortBy('balance')">
-                    <a href="#" class="columnName">low</a>
+                    <a href="#" class="columnName">price</a>
                 </th>
             </tr>
             </thead>

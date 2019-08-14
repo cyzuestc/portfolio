@@ -23,11 +23,30 @@ public class CurrentPriceService {
         Sort sort = new Sort(Sort.Direction.DESC,"id");
         Pageable pageable = new PageRequest(start,size,sort);
         Page<Instrument> instrumentPage = instrumentDAO.findAllByType(instrumentType,pageable);
+
         List<CurrentPrice> currentPrices = new ArrayList<>();
-        instrumentPage.forEach(instrument -> currentPrices.add(currentPriceDAO.getOne(instrument.getId())));
+        instrumentPage.forEach(instrument -> currentPrices.add(currentPriceDAO.getByInstrumentId(instrument.getId())));
         Page<CurrentPrice> currentPricePage = new PageImpl<>(currentPrices,pageable,currentPrices.size());
         return currentPricePage;
     }
 
 
+    public float getPrice(int instrumentId) {
+        return currentPriceDAO.getOne(instrumentId).getPrice();
+    }
+
+    public Page<CurrentPrice> listByInstrumentId(int instrumentId, int start, int size) {
+        Sort sort = new Sort(Sort.Direction.DESC, "id");
+        Pageable pageable = new PageRequest(start, size, sort);
+        Page<CurrentPrice> instrumentPage = currentPriceDAO.findAllByInstrumentId(pageable, instrumentId);
+        return instrumentPage;
+    }
+
+    public void add(CurrentPrice historyPrice) {
+        currentPriceDAO.save(historyPrice);
+    }
+
+    public CurrentPrice getByInstrumentId(int id) {
+        return currentPriceDAO.getByInstrumentId(id);
+    }
 }

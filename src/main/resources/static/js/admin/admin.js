@@ -5,7 +5,10 @@ $(function () {
         columnSorted:false,//column是否排序
         lastSortedColumn:'',//排序前先判断是否给新的一列字段排序.如果是,则倒序排序. 如果否,则是给同一列第二次排序
         instrumentStart: 0,
-        instrumentSize: 20,
+        instrumentSize: 10,
+        listFundManagerStart: 0,
+        listFundManagerSize: 10,
+        singleFile: '',
     };
 
     var vue = new Vue({
@@ -16,15 +19,29 @@ $(function () {
             this.listInstrument();
         },
         methods:{
+            addSingle: function () {
+                if (this.singleFile == null) return;
+                var url = "/uploadExcel";
+                var formData = new FormData();
+                formData.append("excelFile", this.singleFile);
+                axios.post(url, formData).then(function (response) {
+                    // $("#singlePic").val('');
+                    vue.singleFile = null;
+                });
+            },
+            getSingleFile: function (event) {
+                this.singleFile = event.target.files[0];
+                this.addSingle();
+            },
             addInstrumentPageStart: function () {
                 this.instrumentStart += 1;
                 this.listInstrument();
             },
             list:function () {
                 console.log("vue成功加载");
-                var url = "/getFundManager";
+                var url = "/listFundManager?start=" + this.listFundManagerStart + "&size=" + this.listFundManagerSize;
                 axios.get(url).then(function (response) {
-                    data4vue.beans =response.data;
+                    data4vue.beans = response.data.content;
                 });
             },
 

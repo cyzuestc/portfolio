@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:include="include/header::html"></head>
+<head>
+    <title>Citi Finance</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <script src="/js/index/index.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+<div id="workingAreaDiv">
+
+    <!--portfolio数据-->
+    <div id="HoldDiv">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>instrumentId</th>
+                <th>volume</th>
+                <th>Sell</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(bean,index) in portfolioBeans">
+                <td>{{bean.id}}</td>
+                <td>{{bean.instrumentId}}</td>
+                <td>{{bean.volume}}</td>
+                <td>
+                    <input min="0" type="number" style="width: 30px" v-model="numberOfInstrumentToSell">
+                    <button :disabled="numberOfInstrumentToSell<1" @click="sellPortfolio(bean.instrumentId)">sell
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+</body>
+
+<!--for chart-->
+<script src="js/echarts.min.js"></script>
+<script type="text/javascript" src="/js/include/chart.js"></script>
+
+</html>

@@ -3,7 +3,7 @@ $(function () {
         currentFundManager: '',
     };
 
-    var vue = new Vue({
+    var headVue = new Vue({
         el: '#navDiv',
         data: data4vue,
         mounted: function () {
@@ -32,3 +32,4 @@ $(function () {
 
     });
 })
+

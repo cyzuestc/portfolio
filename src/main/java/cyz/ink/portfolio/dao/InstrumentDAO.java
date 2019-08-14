@@ -21,5 +21,7 @@ import java.util.List;
 public interface InstrumentDAO extends JpaRepository<Instrument,Integer> {
     Page<Instrument> findAll(Pageable pageable);
 //    List<Instrument> findAllByType(InstrumentType type);
-    Page<Instrument> findAllByType(InstrumentType type, Pageable pageable);
+Page<Instrument> findAllByType(InstrumentType type, Pageable pageable);
+
+    Instrument findInstrumentBySymbol(String symbol);
 }

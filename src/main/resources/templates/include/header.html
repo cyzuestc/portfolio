@@ -14,11 +14,12 @@
 
     <div id="navDiv">
         <nav class="top">
-            <a href="#">
+            <a href="/index">
             <span class="glyphicon glyphicon-shopping-cart DeepBlueColor">
                 CITI PORTFOLIO
             </span>
             </a>
+            <a href="/login" class="DeepBlueColor">Admin</a>
 
             <!--登陆后的状态栏-->
             <span class="pull-right" v-if="currentFundManager != ''">
@@ -34,7 +35,7 @@
             </span>
 
             <!--未登录的状态栏-->
-            <span class="pull-right" v-if="currentFundManager == ''">
+            <span class="pull-right" v-else>
                 <span>
                 Hi,Welcome to CSTC
                 <a href="/login">Sign In / Sign Up</a>
@@ -44,9 +45,9 @@
 
         </nav>
         <ol class="breadcrumb">
-            <li><a href="/index">Index</a></li>
-            <li><a href="/admin">Admin</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/index">Instruments</a></li>
+            <li v-if="currentFundManager != ''"><a href="/myInstruments">My Instrument</a></li>
+            <li v-if="currentFundManager != ''"><a href="/tradingHistory">TradingHistory</a></li>
         </ol>
 
     </div>

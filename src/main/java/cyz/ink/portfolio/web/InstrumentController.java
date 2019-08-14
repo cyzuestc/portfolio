@@ -34,6 +34,10 @@ public class InstrumentController {
     public Page<CurrentPrice> getInstruments(@PathVariable("type") InstrumentType type, @PathVariable(value = "start")int start,
                                              @RequestParam(value = "size",required = false,defaultValue = "20") int size) {
         return instrumentService.findAllByType(type,start, size);
+    }
 
+    @GetMapping(value = "/getInstrumentById")
+    public Instrument getInstrumentById(@RequestParam(value = "id") int id) {
+        return instrumentService.getInstrumentById(id);
     }
 }

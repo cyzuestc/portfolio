@@ -27,4 +27,19 @@ public class WebController {
     public String registor(){
         return "login/login";
     }
+
+    @GetMapping(value = "/chart")
+    public String chart() {
+        return "include/chart";
+    }
+
+    @GetMapping(value = "/myInstruments")
+    public String myInstruments() {
+        return "index/myInstruments";
+    }
+
+    @GetMapping(value = "/tradingHistory")
+    public String tradingHistory() {
+        return "index/tradingHistory";
+    }
 }

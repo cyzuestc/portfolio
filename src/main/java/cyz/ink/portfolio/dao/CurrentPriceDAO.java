@@ -16,4 +16,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface CurrentPriceDAO extends JpaRepository<CurrentPrice,Integer> {
     Page<CurrentPrice> findAll(Pageable pageable);
 
+    Page<CurrentPrice> findAllByInstrumentId(Pageable pageable, int instrumentId);
+
+    CurrentPrice getByInstrumentId(int id);
 }

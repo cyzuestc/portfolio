@@ -5,122 +5,102 @@
     <title>Citi Finance</title>
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <script src="/js/index/index.js" type="text/javascript"></script>
-
 </head>
 <body>
 
 
 <div id="workingAreaDiv">
-    <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li role="presentation" :class="{'active':type=='Bonds'}" @click="changeInstrument('Bonds')"><a
-                    href="/#">Bonds</a></li>
-            <li role="presentation" :class="{'active':type=='Stocks'}" @click="changeInstrument('Stocks')"><a href="/#">Stocks</a>
-            </li>
-            <li role="presentation" :class="{'active':type=='Futures'}" @click="changeInstrument('Futures')"><a href="/#">Futures</a>
-            </li>
-            <li role="presentation" :class="{'active':type=='ETFs'}" @click="changeInstrument('ETFs')"><a href="/#">ETFs</a>
-            </li>
-        </ul>
-        <form class="navbar-form navbar-left">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+
+    <div id="instrumentAndChartDiv">
+        <div id="instrumentsDiv">
+            <ul class="nav nav-tabs ">
+                <li role="presentation" :class="{'active':type=='Bonds'}" @click="changeInstrument('Bonds')">
+                    <a>Bonds</a></li>
+                <li role="presentation" :class="{'active':type=='Stocks'}" @click="changeInstrument('Stocks')">
+                    <a>Stocks</a></li>
+                <li role="presentation" :class="{'active':type=='Futures'}" @click="changeInstrument('Futures')"><a>Futures</a>
+                </li>
+                <li role="presentation" :class="{'active':type=='ETFs'}" @click="changeInstrument('ETFs')"><a>ETFs</a>
+                </li>
+            </ul>
+
+            <table class="table  table-condensed">
+                <thead>
+                <tr>
+                    <th @click="sortBy('id')">
+                        <a href="#" class="columnName">id
+                            <span class="glyphicon glyphicon-resize-vertical"/>
+                        </a>
+                    </th>
+                    <th @click="sortBy('date')">
+                        <a href="#" class="columnName">date
+                            <span class="glyphicon glyphicon-resize-vertical"/>
+                        </a>
+                    </th>
+                    <th @click="sortBy('price')">
+                        <a href="#" class="columnName">price
+                            <span class="glyphicon glyphicon-resize-vertical"/>
+                        </a>
+                    </th>
+                    <th @click="sortBy('high')">
+                        <a href="#" class="columnName">high
+                            <span class="glyphicon glyphicon-resize-vertical"/>
+                        </a>
+                    </th>
+                    <th @click="sortBy('low')">
+                        <a href="#" class="columnName">low
+                            <span class="glyphicon glyphicon-resize-vertical"/>
+                        </a>
+                    </th>
+                    <th @click="sortBy('open')">
+                        <a href="#" class="columnName">open
+                            <span class="glyphicon glyphicon-resize-vertical"/>
+                        </a>
+                    </th>
+                    <th @click="sortBy('close')">
+                        <a href="#" class="columnName">close
+                            <span class="glyphicon glyphicon-resize-vertical"/>
+                        </a>
+                    </th>
+                    <th @click="sortBy('changed')">
+                        <a href="#" class="columnName">changed
+                            <span class="glyphicon glyphicon-resize-vertical"/>
+                        </a>
+                    </th>
+                    <!--<th>Cost</th>-->
+                    <th>Add</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(bean,index) in beans" :key="bean.index">
+                    <td @click="changeInstrumentChart(bean.instrumentId)">{{bean.instrumentId}}</td>
+                    <td>{{bean.date}}</td>
+                    <td>{{bean.price}}</td>
+                    <td>{{bean.high}}</td>
+                    <td>{{bean.low}}</td>
+                    <td>{{bean.open}}</td>
+                    <td>{{bean.close}}</td>
+                    <td>{{bean.changed}}</td>
+                    <td><input type="number" min="0" style="width: 50px;color: black" v-model="numberOfInstrumentToBuy">
+                    </td>
+                    <td>
+                        <button class="button  button-primary button-glow button-tiny button-pill button-jumbo"
+                                :disabled="numberOfInstrumentToBuy<1" @click="add2Portfolio(bean.id,bean.price)">buy
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="chartDiv">
+            <div id="main">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-
-    <ul class="nav nav-tabs">
-        <li role="presentation" :class="{'active':type=='Bonds'}" @click="changeInstrument('Bonds')"><a
-                href="/#">Bonds</a></li>
-        <li role="presentation" :class="{'active':type=='Stocks'}" @click="changeInstrument('Stocks')"><a href="/#">Stocks</a>
-        </li>
-        <li role="presentation" :class="{'active':type=='Futures'}" @click="changeInstrument('Futures')"><a href="/#">Futures</a>
-        </li>
-        <li role="presentation" :class="{'active':type=='ETFs'}" @click="changeInstrument('ETFs')"><a href="/#">ETFs</a>
-        </li>
-    </ul>
-
-    <table class="table table-striped table-condensed">
-            <thead>
-            <tr style="background-color: #a6e1ec">
-                <th>
-<!--                    <label class="form-checkbox">-->
-<!--                        <input type="checkbox" v-model="selectAll" @click="select()">-->
-                        <i class="form-icon"></i>
-<!--                    </label>-->
-                </th>
-                <th @click="sortBy('id')">
-                    <a href="#" class="columnName">id
-                        <span class="glyphicon glyphicon-resize-vertical"/>
-                    </a>
-                </th>
-                <th @click="sortBy('price')">
-                    <a href="#" class="columnName">price
-                        <span class="glyphicon glyphicon-resize-vertical"/>
-                    </a>
-                </th>
-                <th @click="sortBy('high')">
-                    <a href="#" class="columnName">high
-                        <span class="glyphicon glyphicon-resize-vertical"/>
-                    </a>
-                </th>
-                <th @click="sortBy('low')">
-                    <a href="#" class="columnName">low
-                        <span class="glyphicon glyphicon-resize-vertical"/>
-                    </a>
-                </th>
-                <th @click="sortBy('open')">
-                    <a href="#" class="columnName">open
-                        <span class="glyphicon glyphicon-resize-vertical"/>
-                    </a>
-                </th>
-                <th @click="sortBy('close')">
-                    <a href="#" class="columnName">close
-                        <span class="glyphicon glyphicon-resize-vertical"/>
-                    </a>
-                </th>
-                <th @click="sortBy('changed')">
-                    <a href="#" class="columnName">changed
-                        <span class="glyphicon glyphicon-resize-vertical"/>
-                    </a>
-                </th>
-                <th>
-                    operation
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="(bean,index) in beans" :key="bean.index">
-                <td>
-                    <label>
-                        <input type="checkbox" name="idcheck" :value="bean" v-model="selected" @click="select()">
-                    </label>
-                </td>
-                <td>{{bean.instrumentId}}</td>
-                <td>{{bean.price}}</td>
-                <td>{{bean.high}}</td>
-                <td>{{bean.low}}</td>
-                <td>{{bean.open}}</td>
-                <td>{{bean.close}}</td>
-                <td>{{bean.changed}}</td>
-                <td>
-                    <button type="button" class="btn btn-default" @click="sortUp(bean)">up</button>
-                    <button type="button" class="btn btn-default" @click="sortDown(bean)">down</button>
-                </td>
-            </tr>
-            </tbody>
-    </table>
-
-    <button @click="decreaseInstrumentPageStart()">
-        上一页
-    </button>
-    <button @click="addInstrumentPageStart()">
-        下一页
-    </button>
+        </div>
+    </div>
 
 </div>
 </body>
 
-
+<!--for chart-->
+<script src="js/echarts.min.js"></script>
 </html>

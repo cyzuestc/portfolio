@@ -1,5 +1,6 @@
 package cyz.ink.portfolio.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -17,91 +18,20 @@ import java.util.Date;
 @Entity
 @Slf4j
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
-@Table(name = "HistoryPrice")
+@Table(name = "historyprice")
 public class HistoryPrice {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "instrument_id")
-    private int instrumentId;
     private float price;
     private float high;
     private float low;
     private float open;
     private float close;
     private float changed;
+    @Column(name = "instrument_id")
+    private int instrumentId;
+    @JsonFormat(pattern = "YYYY-MM-dd", timezone = "GMT+8")
     private Date date;
-
-    public int getId() {
-        return id;
-    }
-
-    public int getInstrumentId() {
-        return instrumentId;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public float getHigh() {
-        return high;
-    }
-
-    public float getLow() {
-        return low;
-    }
-
-    public float getOpen() {
-        return open;
-    }
-
-    public float getClose() {
-        return close;
-    }
-
-    public float getChanged() {
-        return changed;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setInstrumentId(int instrumentId) {
-        this.instrumentId = instrumentId;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public void setHigh(float high) {
-        this.high = high;
-    }
-
-    public void setLow(float low) {
-        this.low = low;
-    }
-
-    public void setOpen(float open) {
-        this.open = open;
-    }
-
-    public void setClose(float close) {
-        this.close = close;
-    }
-
-    public void setChanged(float changed) {
-        this.changed = changed;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 }

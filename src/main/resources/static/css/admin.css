@@ -1,6 +1,5 @@
 *{margin:0;padding:0;}
 body {
-    background: #00bdf2;
     background: -webkit-linear-gradient(to bottom right, #00bdf2,#00b3f0 18%,#0066b3 77%,#004985);
     background: linear-gradient(to bottom right, #00bdf2,#00b3f0 18%,#0066b3 77%,#004985);
     background-size:cover;
@@ -12,12 +11,10 @@ body {
     background: linear-gradient(180deg,#00bdf2,#00b3f0 18%,#0066b3 77%,#004985);
     padding-top: 30px;
 }
-
-#workingAreaDiv {
-    margin: 0 100px;
-    background-color: white;
-    font-size: 12px;
-}
 a:hover{
     text-decoration: none;
+}
+
+tbody {
+    background-color: #5bc0de;
 }
