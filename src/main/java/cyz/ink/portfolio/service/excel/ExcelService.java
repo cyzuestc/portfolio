@@ -5,6 +5,7 @@ import cyz.ink.portfolio.dao.HistoryPriceDAO;
 import cyz.ink.portfolio.pojo.CurrentPrice;
 import cyz.ink.portfolio.pojo.InstrumentType;
 import cyz.ink.portfolio.service.CurrentPriceService;
+import cyz.ink.portfolio.service.InstrumentsValueService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,10 +31,12 @@ public class ExcelService {
     HistoryPriceDAO historyPriceDAO;
     @Autowired
     CurrentPriceService currentPriceService;
+    @Autowired
+    InstrumentsValueService instrumentsValueService;
 
     private static ExcelDao excelDao = new ExcelDaoImpl();
 
-    public List addDataFromExcel(File file, InstrumentType instrumentType) {
+    public int addDataFromExcel(File file, InstrumentType instrumentType) {
         log.warn(file.isFile() + "");
         String fileName = file.getName();
         String prefix = fileName.substring(fileName.lastIndexOf("."));
@@ -77,7 +80,10 @@ public class ExcelService {
                 currentPriceService.add(currentPrice);
             }
         }
-        return listExcel1;
+
+        instrumentsValueService.calculateInstrumentsValue();
+        //上传成功
+        return 1;
     }
 
 

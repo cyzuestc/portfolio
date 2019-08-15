@@ -10,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @ Author      : Zink
  * @ Date        : Created in 20:50 2019/8/13
@@ -31,5 +33,9 @@ public class FundManagerService {
         Pageable pageable = new PageRequest(start, size, sort);
         Page<FundManager> fundManagers = fundManagerDAO.findAll(pageable);
         return fundManagers;
+    }
+
+    public List<FundManager> listAll() {
+        return fundManagerDAO.findAll();
     }
 }

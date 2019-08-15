@@ -18,3 +18,22 @@ a:hover{
 tbody {
     background-color: #5bc0de;
 }
+
+#selectInstrumentTypeDiv {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#selectInstrumentTypeDiv input {
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+
+}
+
+#selectInstrumentTypeDiv select {
+    width: 10%;
+    margin: 10px auto;
+    display: inline-block;
+}
+

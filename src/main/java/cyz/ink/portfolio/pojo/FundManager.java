@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -19,5 +20,12 @@ public class FundManager {
     private String name;
     private String password;
     private float balance;
+    private float profit;
+    @Column(name = "instruments_value")
+    private float instrumentsValue;
+
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "fundManager_id")
+    private Set<Hold> hode;
 
 }

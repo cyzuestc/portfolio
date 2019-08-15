@@ -34,4 +34,13 @@ public class HistoryPrice {
     private int instrumentId;
     @JsonFormat(pattern = "YYYY-MM-dd", timezone = "GMT+8")
     private Date date;
+
+//    Instrument instrument;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "instrument_id")
+//    public Instrument getInstrument(){
+//        return instrument;
+//    }
+
 }

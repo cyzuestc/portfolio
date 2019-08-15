@@ -11,10 +11,8 @@ $(function () {
         },
         methods: {
             getHeaderInfo: function () {
-                console.log("getHeaderInfo");
                 var url = "/getHeaderInfo";
                 axios.get(url).then(function (response) {
-                    console.log(response.data == '');
                     data4vue.currentFundManager = response.data;
                 });
             },

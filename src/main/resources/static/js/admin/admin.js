@@ -9,6 +9,7 @@ $(function () {
         listFundManagerStart: 0,
         listFundManagerSize: 10,
         singleFile: '',
+        uploadInstrumentType: 'Bonds',
     };
 
     var vue = new Vue({
@@ -21,12 +22,19 @@ $(function () {
         methods:{
             addSingle: function () {
                 if (this.singleFile == null) return;
-                var url = "/uploadExcel";
+                var url = "/uploadExcel?instrumentType=" + data4vue.uploadInstrumentType;
                 var formData = new FormData();
+                let vm = this;
                 formData.append("excelFile", this.singleFile);
                 axios.post(url, formData).then(function (response) {
-                    // $("#singlePic").val('');
-                    vue.singleFile = null;
+
+                    if (response.data == 1) {
+                        vue.singleFile = null;
+                        alert("上传成功")
+                        vm.listInstrument();
+                    } else {
+                        alert("上传失败")
+                    }
                 });
             },
             getSingleFile: function (event) {
@@ -51,7 +59,19 @@ $(function () {
                 console.log(url);
                 axios.get(url).then(function (response) {
                     data4vue.instrumentBean = response.data.content;
+                    data4vue.instrumentsPagination = response.data;
+                    console.log(response.data)
                 });
+            },
+            changeInstrumentsPage: function (addPageNum) {
+                if (addPageNum == -1 && data4vue.instrumentStart > 0) {
+                    data4vue.instrumentStart--;
+                    this.listInstrument();
+                }
+                if (addPageNum == 1 && data4vue.instrumentStart < data4vue.instrumentsPagination.totalPages - 1) {
+                    data4vue.instrumentStart++;
+                    this.listInstrument();
+                }
             },
 
             //sort data by price/high/low/open/close etc.

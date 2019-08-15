@@ -41,17 +41,18 @@ public class AdminController {
 
 
     @PostMapping("/uploadExcel")
-    public Object add(@RequestParam(name = "InstrumentType", defaultValue = "Bonds") InstrumentType instrumentType, MultipartFile excelFile, HttpServletRequest request) {
+    public int add(@RequestParam(name = "instrumentType", defaultValue = "Bonds") InstrumentType instrumentType, MultipartFile excelFile, HttpServletRequest request) {
 
         File file = new File("d:\\" + excelFile.getOriginalFilename());
         try {
             excelFile.transferTo(file);
             log.warn(file.isFile() + "");
-            excelService.addDataFromExcel(file, instrumentType);
+            return excelService.addDataFromExcel(file, instrumentType);
         } catch (IOException e) {
             e.printStackTrace();
+            return -1;
         }
-        return true;
+
     }
 
 

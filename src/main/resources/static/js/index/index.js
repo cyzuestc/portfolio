@@ -10,18 +10,20 @@ $(function () {
         type: 'Bonds',
         start:0,
         size:10,
+        instrumentsPagination: [],
         portfolioStart: 0,
         portfolioSize: 10,
         tradingHistoryStart: 0,
         tradingHistorySize: 10,
+        tradingHistoryPagination: [],
         portfolioPagination: [],
         totalPageNum: 0,
         curPageNum: 0,
         selected:[],
         selectAll:false,
         totalPrice: 0,
-        numberOfInstrumentToBuy: 0,
-        numberOfInstrumentToSell: 0,
+        numberOfInstrumentToBuy: 1,
+        numberOfInstrumentToSell: 1,
         rawData: [
             ['2019/1/24', 2320.26, 2320.26, 2287.3, 2362.94],
         ],
@@ -32,7 +34,7 @@ $(function () {
         el:'#workingAreaDiv',
         data:data4vue,
         mounted:function () {
-            this.list();
+            this.listInstruments();
             this.listPortfolio();
             this.listTradingHistory();
             this.getChartData();
@@ -42,6 +44,7 @@ $(function () {
                 var url = "/tradingHistoryList?start=" + this.tradingHistoryStart + "&size=" + this.tradingHistorySize;
                 axios.get(url).then(function (response) {
                     data4vue.tradingHistoryBeans = response.data.content;
+                    data4vue.tradingHistoryPagination = response.data;
                 });
             },
             sellPortfolio: function (instrumentId) {
@@ -74,30 +77,57 @@ $(function () {
                         alert("购买成功");
                         vue.listPortfolio();
                         vue.listTradingHistory();
-                        vm.$emit('updatePrice')
+                        // vm.$emit('updatePrice')
                     }
                 });
             },
             addInstrumentPageStart: function () {
                 this.start += 1;
-                this.list();
+                this.listInstruments();
             },
             decreaseInstrumentPageStart: function() {
                 if (this.start > 0) {
                     this.start -= 1;
-                    this.list();
+                    this.listInstruments();
                 }
             },
-            list:function () {
-                var url = "/getCurrentPriceByType?type=" + this.type + "&start=" + this.start + "&size=" + this.size;
+            listInstruments: function () {
+                var url = "/getInstrumentsByType?type=" + this.type + "&start=" + this.start + "&size=" + this.size;
                 axios.get(url).then(function (response) {
                     data4vue.beans =response.data.content;
-                    data4vue.pagination = response.data;
+                    data4vue.instrumentsPagination = response.data;
                 });
             },
-
+            changeInstrumentsPage: function (addPageNum) {
+                if (addPageNum == -1 && data4vue.start > 0) {
+                    data4vue.start--;
+                }
+                if (addPageNum == 1 && data4vue.start < this.instrumentsPagination.totalPages - 1) {
+                    data4vue.start++;
+                }
+                this.listInstruments();
+            },
+            changeTradingHistoryPage: function (addPageNum) {
+                if (addPageNum == -1 && data4vue.tradingHistoryStart > 0) {
+                    data4vue.tradingHistoryStart--;
+                }
+                if (addPageNum == 1 && data4vue.tradingHistoryStart < this.tradingHistoryPagination.totalPages - 1) {
+                    data4vue.tradingHistoryStart++;
+                }
+                this.listTradingHistory();
+            },
+            changePortfolioPage: function (addPageNum) {
+                if (addPageNum == -1 && data4vue.portfolioStart > 0) {
+                    data4vue.portfolioStart--;
+                }
+                if (addPageNum == 1 && data4vue.portfolioStart < this.portfolioPagination.totalPages - 1) {
+                    data4vue.portfolioStart++;
+                }
+                this.listPortfolio();
+            },
             listPortfolio: function () {
                 var url = "/getPortfolio?start=" + this.portfolioStart + "&size=" + this.portfolioSize;
+                console.log(url)
                 axios.get(url).then(function (response) {
                     //获取到hold数据
                     data4vue.portfolioBeans = response.data.content;
@@ -108,7 +138,7 @@ $(function () {
             changeInstrument: function (instrumentType) {
                 this.type = instrumentType;
                 this.start = 0;
-                this.list();
+                this.listInstruments();
             },
             //sort data by price/high/low/open/close etc.
             sortBy:function(columnName){
@@ -122,11 +152,11 @@ $(function () {
                     vue.beans.sort(function (a,b) {
                         if(vue.columnSorted){
                             //倒序
-                            return a[columnName] < b[columnName];
+                            return a['currentPrice'][0][columnName] < b['currentPrice'][0][columnName];
                         }
                     else {
                             //正序
-                            return a[columnName] > b[columnName];
+                            return a['currentPrice'][0][columnName] > b['currentPrice'][0][columnName];
                         }
                     });
             },
@@ -149,12 +179,10 @@ $(function () {
                         dataArr[i][4] = json[i]['low'];
                     }
                     data4vue.rawData = dataArr;
-                    console.log(data4vue.rawData)
                     vm.drawData();
                 });
             },
             drawData: function () {
-                console.log("vue start");
                 // 1. 配置和数据
                 var upColor = '#ec0000';
                 var upBorderColor = '#8A0000';

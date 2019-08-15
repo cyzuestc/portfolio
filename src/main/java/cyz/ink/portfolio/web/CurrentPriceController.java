@@ -32,7 +32,7 @@ public class CurrentPriceController {
                                                     @RequestParam(name = "start", defaultValue = "0") int start,
                                                     @RequestParam(name = "size", defaultValue = "20") int size) {
 
-        return currentPriceService.list(type,start,size);
+        return currentPriceService.getCurrentPriceByType(type, start, size);
     }
 
     @GetMapping(value = "/getCurrentPricesByInstrumentId")
@@ -41,4 +41,10 @@ public class CurrentPriceController {
                                                     @RequestParam(name = "size", defaultValue = "20") int size) {
         return currentPriceService.listByInstrumentId(instrumentId, start, size);
     }
+
+    @GetMapping(value = "/getCurrentPriceById")
+    public CurrentPrice getCurrentPriceById(@RequestParam("id") int id) {
+        return currentPriceService.get(id);
+    }
+
 }

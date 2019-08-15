@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * @ Author      : Zink
@@ -27,6 +28,16 @@ public class Instrument {
     @Enumerated(EnumType.STRING)
     private InstrumentType type;
 
-//    @OneToOne
-//    private CurrentPrice currentPrice;
+
+//    @OneToMany(cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
+//    @JoinColumn(name = "instrument_id")
+//    private Set<HistoryPrice> historyPrices;
+
+//    @OneToMany(cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
+//    @JoinColumn(name = "instrument_id")
+//    private Set<TradingHistory> tradingHistories;
+
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "instrument_id")
+    private Set<CurrentPrice> currentPrice;
 }

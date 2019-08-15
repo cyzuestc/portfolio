@@ -10,7 +10,15 @@
 
 <div id="workingAreaDiv">
 
-    <input id="singleFile" style="width: 10em;" type="file" @change="getSingleFile($event)"/>
+    <div id="selectInstrumentTypeDiv">
+        <select class="form-control" v-model="uploadInstrumentType">
+            <option value="Bonds">Bonds</option>
+            <option value="Stocks">Stocks</option>
+            <option value="Futures">Futures</option>
+            <option value="ETFs">ETFs</option>
+        </select>
+        <input id="singleFile" style="width: 10em;" type="file" @change="getSingleFile($event)"/>
+    </div>
 
     <table class="table ">
         <thead>
@@ -39,6 +47,12 @@
         </tbody>
     </table>
 
+    <ul class="nav nav-tabs ">
+        <li @click="changeInstrumentsPage('-1')"><a>上一页</a></li>
+        <li><a>{{instrumentStart+1}}</a></li>
+        <li @click="changeInstrumentsPage('1')"><a>下一页</a></li>
+    </ul>
+
     <button @click="addInstrumentPageStart()">
         下一页
     </button>
@@ -52,11 +66,11 @@
                 <th @click="sortBy('name')">
                     <a href="#" class="columnName">name</a>
                 </th>
-                <th @click="sortBy('password')">
-                    <a href="#" class="columnName">password</a>
+                <th @click="sortBy('instrumentsValue')">
+                    <a href="#" class="columnName">instruments</a>
                 </th>
                 <th @click="sortBy('balance')">
-                    <a href="#" class="columnName">price</a>
+                    <a href="#" class="columnName">profit</a>
                 </th>
             </tr>
             </thead>
@@ -64,8 +78,8 @@
             <tr v-for="bean in beans">
                 <td>{{bean.id}}</td>
                 <td>{{bean.name}}</td>
-                <td>{{bean.password}}</td>
-                <td>{{bean.balance}}</td>
+                <td>{{bean.instrumentsValue}}</td>
+                <td>{{bean.profit}}</td>
             </tr>
             </tbody>
     </table>

@@ -32,4 +32,10 @@ public class TradingHistory {
     private int fundManagerId;
     @Column(name = "instrument_id")
     private int instrumentId;
+
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "instrument_id", insertable = false, updatable = false)
+
+    private Instrument instrument;
+
 }

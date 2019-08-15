@@ -22,21 +22,23 @@
                 </li>
                 <li role="presentation" :class="{'active':type=='ETFs'}" @click="changeInstrument('ETFs')"><a>ETFs</a>
                 </li>
+
+                <li class="pull-right" @click="changeInstrumentsPage('1')"><a>下一页</a></li>
+                <li class="pull-right"><a>{{start+1}}</a></li>
+                <li class="pull-right" @click="changeInstrumentsPage('-1')"><a>上一页</a></li>
             </ul>
+
 
             <table class="table  table-condensed">
                 <thead>
                 <tr>
-                    <th @click="sortBy('id')">
-                        <a href="#" class="columnName">id
-                            <span class="glyphicon glyphicon-resize-vertical"/>
-                        </a>
-                    </th>
+                    <th>symbol</th>
                     <th @click="sortBy('date')">
                         <a href="#" class="columnName">date
                             <span class="glyphicon glyphicon-resize-vertical"/>
                         </a>
                     </th>
+
                     <th @click="sortBy('price')">
                         <a href="#" class="columnName">price
                             <span class="glyphicon glyphicon-resize-vertical"/>
@@ -62,30 +64,34 @@
                             <span class="glyphicon glyphicon-resize-vertical"/>
                         </a>
                     </th>
-                    <th @click="sortBy('changed')">
-                        <a href="#" class="columnName">changed
-                            <span class="glyphicon glyphicon-resize-vertical"/>
-                        </a>
-                    </th>
+                    <!--<th @click="sortBy('changed')">-->
+                    <!--<a href="#" class="columnName">changed-->
+                    <!--<span class="glyphicon glyphicon-resize-vertical"/>-->
+                    <!--</a>-->
+                    <!--</th>-->
                     <!--<th>Cost</th>-->
                     <th>Add</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr v-for="(bean,index) in beans" :key="bean.index">
-                    <td @click="changeInstrumentChart(bean.instrumentId)">{{bean.instrumentId}}</td>
-                    <td>{{bean.date}}</td>
-                    <td>{{bean.price}}</td>
-                    <td>{{bean.high}}</td>
-                    <td>{{bean.low}}</td>
-                    <td>{{bean.open}}</td>
-                    <td>{{bean.close}}</td>
-                    <td>{{bean.changed}}</td>
-                    <td><input type="number" min="0" style="width: 50px;color: black" v-model="numberOfInstrumentToBuy">
+                    <!--<td @click="changeInstrumentChart(bean.instrumentId)">{{bean.instrumentId}}</td>-->
+                    <!--<td>{{bean.instrument.name}}</td>-->
+                    <td @click="changeInstrumentChart(bean.id)">{{bean.symbol}}</td>
+                    <td>{{bean.currentPrice[0].date}}</td>
+                    <td>{{bean.currentPrice[0].price}}</td>
+                    <td>{{bean.currentPrice[0].high}}</td>
+                    <td>{{bean.currentPrice[0].low}}</td>
+                    <td>{{bean.currentPrice[0].open}}</td>
+                    <td>{{bean.currentPrice[0].close}}</td>
+                    <!--<td>{{bean.changed}}</td>-->
+                    <td><input @mouseover="" type="number" min="1" style="width: 50px;color: black"
+                               v-model="numberOfInstrumentToBuy">
                     </td>
                     <td>
                         <button class="button  button-primary button-glow button-tiny button-pill button-jumbo"
-                                :disabled="numberOfInstrumentToBuy<1" @click="add2Portfolio(bean.id,bean.price)">buy
+                                :disabled="numberOfInstrumentToBuy<1"
+                                @click="add2Portfolio(bean.id,bean.currentPrice[0].price)">buy
                         </button>
                     </td>
                 </tr>

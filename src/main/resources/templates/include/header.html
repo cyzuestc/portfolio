@@ -19,7 +19,7 @@
                 CITI PORTFOLIO
             </span>
             </a>
-            <a href="/login" class="DeepBlueColor">Admin</a>
+            <a href="/admin" class="DeepBlueColor">Admin</a>
 
             <!--登陆后的状态栏-->
             <span class="pull-right" v-if="currentFundManager != ''">
@@ -29,7 +29,7 @@
                 </span>
                 <a href="#">My Portfolio</a>
                 <span class="glyphicon glyphicon-shoppong-cart DeepBlueColor">
-                    Balance  <strong style="color: gold">${{currentFundManager.balance}}</strong>
+                    Profit  <strong style="color: gold">${{currentFundManager.profit}}</strong>
                 </span>
                 <a href="#" @click="fundManagerLogout()">Log Out</a>
             </span>

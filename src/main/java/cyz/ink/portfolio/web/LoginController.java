@@ -45,7 +45,7 @@ public class LoginController {
         fundManager = new FundManager();
         fundManager.setName(username);
         fundManager.setPassword(password);
-        fundManager.setBalance(1000000);
+        fundManager.setBalance(0);
         fundManagerDAO.save(fundManager);
         return 1;
     }

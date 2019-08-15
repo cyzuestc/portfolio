@@ -12,11 +12,16 @@
 <div id="workingAreaDiv">
     <!--trading History-->
     <div id="tradingHistory">
+        <ul class="nav nav-tabs ">
+            <li @click="changeTradingHistoryPage('-1')"><a>上一页</a></li>
+            <li><a>{{tradingHistoryStart+1}}</a></li>
+            <li @click="changeTradingHistoryPage('1')"><a>下一页</a></li>
+        </ul>
         <table class="table">
             <thead>
             <tr>
                 <th>id</th>
-                <th>instrumentId</th>
+                <th>instrument</th>
                 <th>price</th>
                 <th>volume</th>
                 <th>date</th>
@@ -25,7 +30,7 @@
             <tbody>
             <tr v-for="(bean,index) in tradingHistoryBeans">
                 <td>{{bean.id}}</td>
-                <td>{{bean.instrumentId}}</td>
+                <td>{{bean.instrument.symbol}}</td>
                 <td>{{bean.price}}</td>
                 <td>{{bean.volume}}</td>
                 <td>{{bean.date}}</td>

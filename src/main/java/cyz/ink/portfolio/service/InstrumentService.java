@@ -48,12 +48,11 @@ public class InstrumentService {
         return pageFromJPA;
     }
 
-    public Page<CurrentPrice> findAllByType(InstrumentType type,int start, int size){
+    public Page<Instrument> getInstrumentsByType(InstrumentType type, int start, int size) {
         Sort sort = new Sort(Sort.Direction.DESC,"id");
         Pageable pageable = new PageRequest(start,size,sort);
-//        Page<CurrentPrice> curpage = instrumentDAO.findAllByType(type,pageable);
-//        return curpage;
-        return null;
+        Page<Instrument> curpage = instrumentDAO.findAllByType(type, pageable);
+        return curpage;
     }
 
     public Instrument getInstrumentById(int id) {

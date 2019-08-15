@@ -37,10 +37,8 @@ public class CurrentPrice {
     @JsonFormat(pattern = "YYYY-MM-dd", timezone = "GMT+8")
     Date date;
 
-    //hibernate onetoone
-    //sping jpa onetone/onetomany
-
-//    @OneToOne(mappedBy = "currentPrice")
+//    @OneToOne(cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
+//    @JoinColumn(name = "id")
 //    private Instrument instrument;
 
 }

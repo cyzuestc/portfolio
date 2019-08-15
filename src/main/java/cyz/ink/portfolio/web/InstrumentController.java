@@ -30,10 +30,13 @@ public class InstrumentController {
                                            @RequestParam(name = "size", defaultValue = "10") int size) {
         return instrumentService.getInstruments(start, size);
     }
-    @GetMapping(value = "/getCurrentPrices/{type}/{start}")
-    public Page<CurrentPrice> getInstruments(@PathVariable("type") InstrumentType type, @PathVariable(value = "start")int start,
-                                             @RequestParam(value = "size",required = false,defaultValue = "20") int size) {
-        return instrumentService.findAllByType(type,start, size);
+
+    @GetMapping(value = "/getInstrumentsByType")
+    public Page<Instrument> getInstrumentsByType(
+            @RequestParam(value = "type", defaultValue = "Bonds") InstrumentType type,
+            @RequestParam(value = "start", defaultValue = "0") int start,
+            @RequestParam(value = "size", defaultValue = "10") int size) {
+        return instrumentService.getInstrumentsByType(type, start, size);
     }
 
     @GetMapping(value = "/getInstrumentById")

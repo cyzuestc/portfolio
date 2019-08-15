@@ -38,6 +38,8 @@ public class HoldService {
         //balance处理,卖出后增加balance
         float price = currentPriceService.getPrice(instrumentId);
         fundManager.setBalance(fundManager.getBalance() + price * volume);
+        fundManager.setInstrumentsValue(fundManager.getInstrumentsValue() - price * volume);
+        fundManager.setProfit(fundManager.getInstrumentsValue() + fundManager.getBalance());
 
         //卖光了,就删除hold记录
         if (hold.getVolume() == 0) holdDAO.delete(hold);
@@ -51,7 +53,7 @@ public class HoldService {
         return 1;
     }
 
-    //增加hold
+    //增加hold,购买
     public int add(int instrumentId, int volume, float price, FundManager fundManager) {
         Hold hold = holdDAO.getHoldByInstrumentIdAndFundManagerId(instrumentId, fundManager.getId());
         if (hold != null) {
@@ -64,6 +66,7 @@ public class HoldService {
             holdDAO.save(hold);
         }
         fundManager.setBalance(fundManager.getBalance() - volume * price);
+        fundManager.setInstrumentsValue(fundManager.getInstrumentsValue() + volume * price);
         fundManagerService.save(fundManager);
 
         //增加操作历史

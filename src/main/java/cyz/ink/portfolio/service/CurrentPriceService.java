@@ -19,7 +19,7 @@ public class CurrentPriceService {
     @Autowired
     CurrentPriceDAO currentPriceDAO;
 
-    public Page<CurrentPrice> list(InstrumentType instrumentType,int start,int size){
+    public Page<CurrentPrice> getCurrentPriceByType(InstrumentType instrumentType, int start, int size) {
         Sort sort = new Sort(Sort.Direction.DESC,"id");
         Pageable pageable = new PageRequest(start,size,sort);
         Page<Instrument> instrumentPage = instrumentDAO.findAllByType(instrumentType,pageable);
@@ -48,5 +48,9 @@ public class CurrentPriceService {
 
     public CurrentPrice getByInstrumentId(int id) {
         return currentPriceDAO.getByInstrumentId(id);
+    }
+
+    public CurrentPrice get(int id) {
+        return currentPriceDAO.getOne(id);
     }
 }
