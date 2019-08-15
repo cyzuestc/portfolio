@@ -56,7 +56,13 @@ $(function () {
                 });
             },
             sellPortfolio: function (instrumentId) {
-                var url = "/sellPortfolio?instrumentId=" + instrumentId + "&volume=" + this.numberOfInstrumentToSell;
+                var volume = 1;
+                volume = prompt('how many?')
+                if (isNaN(volume)) {
+                    alert("please input number");
+                    return;
+                }
+                var url = "/sellPortfolio?instrumentId=" + instrumentId + "&volume=" + volume;
                 axios.get(url).then(function (response) {
                     var returnCode = response.data;
                     if (returnCode == -2) {
@@ -72,7 +78,13 @@ $(function () {
                 });
             },
             add2Portfolio: function (instrumentId, price) {
-                var url = "/addPortfolio?instrumentId=" + instrumentId + "&volume=" + this.numberOfInstrumentToBuy + "&price=" + price;
+                var volume = 1;
+                volume = prompt('how many?')
+                if (isNaN(volume)) {
+                    alert("please input number");
+                    return;
+                }
+                var url = "/addPortfolio?instrumentId=" + instrumentId + "&volume=" + volume + "&price=" + price;
                 if (this.numberOfInstrumentToBuy <= 0) return;
                 let vm = this
                 axios.get(url).then(function (response) {
@@ -83,7 +95,7 @@ $(function () {
                     } else if (returnCode == 0) {
                         alert("balance is not enough, you can't afford it!");
                     } else if (returnCode == 1) {
-                        alert("购买成功");
+                        alert("success");
                         vue.listPortfolio();
                         vue.listTradingHistory();
                         vue.getHeaderInfo();
@@ -129,7 +141,7 @@ $(function () {
                 if (addPageNum == -1 && data4vue.portfolioStart > 0) {
                     data4vue.portfolioStart--;
                 }
-                if (addPageNum == 1 && data4vue.portfolioStart < this.portfolioPagination.totalPages - 1) {
+                if (addPageNum == 1 && data4vue.portfolioStart < this.portfolioPagination - 1) {
                     data4vue.portfolioStart++;
                 }
                 this.listPortfolio();
@@ -140,8 +152,9 @@ $(function () {
                 axios.get(url).then(function (response) {
                     //获取到hold数据
                     data4vue.portfolioBeans = response.data.content;
+                    console.log(this.portfolioBeans)
                     //获取到hold分页数据
-                    data4vue.portfolioPagination = response.data;
+                    data4vue.portfolioPagination = response.data.content[0]['totalPages'];
                 });
             },
             changeInstrument: function (instrumentType) {
@@ -184,8 +197,8 @@ $(function () {
                         dataArr[i][0] = json[i]['date'];
                         dataArr[i][1] = json[i]['open'];
                         dataArr[i][2] = json[i]['close'];
-                        dataArr[i][3] = json[i]['high'];
-                        dataArr[i][4] = json[i]['low'];
+                        dataArr[i][3] = json[i]['low'];
+                        dataArr[i][4] = json[i]['high'];
                     }
                     data4vue.rawData = dataArr;
                     vm.drawData();

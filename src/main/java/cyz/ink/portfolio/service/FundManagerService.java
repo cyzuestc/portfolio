@@ -29,7 +29,7 @@ public class FundManagerService {
     }
 
     public Page<FundManager> list(int start, int size) {
-        Sort sort = new Sort(Sort.Direction.DESC, "id");
+        Sort sort = new Sort(Sort.Direction.DESC, "profit");
         Pageable pageable = new PageRequest(start, size, sort);
         Page<FundManager> fundManagers = fundManagerDAO.findAll(pageable);
         return fundManagers;

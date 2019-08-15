@@ -53,4 +53,8 @@ public class CurrentPriceService {
     public CurrentPrice get(int id) {
         return currentPriceDAO.getOne(id);
     }
+
+    public List<CurrentPrice> getAll() {
+        return currentPriceDAO.findAll();
+    }
 }

@@ -80,7 +80,7 @@ public class ExcelService {
                 currentPriceService.add(currentPrice);
             }
         }
-
+        //update instrumentsValue
         instrumentsValueService.calculateInstrumentsValue();
         //上传成功
         return 1;

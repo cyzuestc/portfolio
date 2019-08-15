@@ -1,15 +1,14 @@
 package cyz.ink.portfolio.service;
 
 import cyz.ink.portfolio.dao.HoldDAO;
-import cyz.ink.portfolio.pojo.FundManager;
-import cyz.ink.portfolio.pojo.Hold;
+import cyz.ink.portfolio.pojo.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @ Author      : Zink
@@ -28,6 +27,8 @@ public class HoldService {
     CurrentPriceService currentPriceService;
     @Autowired
     TradingHistoryService tradingHistoryService;
+    @Autowired
+    InstrumentService instrumentService;
 
     public int sell(int instrumentId, int volume, FundManager fundManager) {
         Hold hold = holdDAO.getHoldByInstrumentIdAndFundManagerId(instrumentId, fundManager.getId());
@@ -37,27 +38,33 @@ public class HoldService {
         if (hold.getVolume() < volume) return -2;
 
 
-        log.info("-------卖出股票-------");
-
+        log.info("-------卖出股票-------" + "售出前volume: " + hold.getVolume());
         //balance处理,卖出后增加balance
-        log.info("售出前volume: " + hold.getVolume());
         hold.setVolume(hold.getVolume() - volume);
-        log.info("售出后volume: " + hold.getVolume());
-        holdDAO.save(hold);
+        //卖光了,就删除hold记录
+        if (hold.getVolume() == 0) {
+            holdDAO.delete(hold);
+//        更改hold
+        } else {
+            holdDAO.save(hold);
+        }
 
+        log.info("售出后volume: " + holdDAO.getHoldByInstrumentIdAndFundManagerId(instrumentId, fundManager.getId()));
 
         float price = currentPriceService.getPrice(instrumentId);
-        log.info("price:", price);
+        log.info("instrumentId: " + "price: ", price);
         fundManager.setBalance(fundManager.getBalance() + price * volume);
+
+        log.info("insValue before: " + fundManager.getInstrumentsValue());
+
         fundManager.setInstrumentsValue(fundManager.getInstrumentsValue() - price * volume);
+
+        log.info("insValue after: " + fundManager.getInstrumentsValue());
+
         fundManager.setProfit(fundManager.getInstrumentsValue() + fundManager.getBalance());
 
         fundManagerService.save(fundManager);
-        //卖光了,就删除hold记录
-//        if (hold.getVolume() == 0) holdDAO.delete(hold);
-        //更改hold
-//        else {
-//        }
+
 
         //tradingHistory处理
         tradingHistoryService.add(instrumentId, -1 * volume, price, fundManager);
@@ -67,7 +74,7 @@ public class HoldService {
     //增加hold,购买
     public int add(int instrumentId, int volume, float price, FundManager fundManager) {
         Hold hold = holdDAO.getHoldByInstrumentIdAndFundManagerId(instrumentId, fundManager.getId());
-        log.info("购买前数量: " + hold.getVolume());
+        log.info("hold: " + hold);
         if (hold != null) {
             hold.setVolume(hold.getVolume() + volume);
         } else {
@@ -77,7 +84,8 @@ public class HoldService {
             hold.setInstrumentId(instrumentId);
         }
         holdDAO.save(hold);
-        log.info("购买后数量: " + hold.getVolume());
+
+        log.info("购买后hold: " + hold);
 
         fundManager.setBalance(fundManager.getBalance() - volume * price);
         fundManager.setInstrumentsValue(fundManager.getInstrumentsValue() + volume * price);
@@ -88,11 +96,32 @@ public class HoldService {
         return 1;
     }
 
-    //选出hold数据
-    public Page<Hold> list(FundManager fundManager, int start, int size) {
+    //选出hold数据,并选出对应的currentPrice和instrument,共同放进HoldAndInstrumentBean中
+    public Page<HoldAndInstrumentBean> list(FundManager fundManager, int start, int size) {
         Sort sort = new Sort(Sort.Direction.DESC, "id");
         Pageable pageable = new PageRequest(start, size, sort);
-        return holdDAO.findAllByFundManagerId(fundManager.getId(), pageable);
+        Page<Hold> holdPage = holdDAO.findAllByFundManagerId(fundManager.getId(), pageable);
+        List<Hold> holds = holdPage.getContent();
+        List<HoldAndInstrumentBean> holdAndInstrumentBeans = new ArrayList<>();
+        for (Hold hold : holds) {
+            //获取相应的属性
+            int instrumentId = hold.getInstrumentId();
+            CurrentPrice currentPrice = currentPriceService.getByInstrumentId(instrumentId);
+            Instrument instrument = instrumentService.getInstrumentById(instrumentId);
+//            创建对象,并添加到list中
+            HoldAndInstrumentBean holdAndInstrumentBean = new HoldAndInstrumentBean();
+            holdAndInstrumentBean.setCurrentPrice(currentPrice);
+            holdAndInstrumentBean.setHold(hold);
+            holdAndInstrumentBean.setInstrument(instrument);
+            holdAndInstrumentBean.setTotalPages(holdPage.getTotalPages());
+            holdAndInstrumentBeans.add(holdAndInstrumentBean);
+        }
+        Page<HoldAndInstrumentBean> holdAndInstrumentBeanPage = new PageImpl<>(holdAndInstrumentBeans, pageable, holdAndInstrumentBeans.size());
+        return holdAndInstrumentBeanPage;
+    }
+
+    public List<Hold> listAll(int fundManagerId) {
+        return holdDAO.findAllByFundManagerId(fundManagerId);
     }
 
 

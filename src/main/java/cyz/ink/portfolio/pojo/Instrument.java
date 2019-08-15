@@ -29,14 +29,6 @@ public class Instrument {
     private InstrumentType type;
 
 
-//    @OneToMany(cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
-//    @JoinColumn(name = "instrument_id")
-//    private Set<HistoryPrice> historyPrices;
-
-//    @OneToMany(cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
-//    @JoinColumn(name = "instrument_id")
-//    private Set<TradingHistory> tradingHistories;
-
     @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(name = "instrument_id")
     private Set<CurrentPrice> currentPrice;

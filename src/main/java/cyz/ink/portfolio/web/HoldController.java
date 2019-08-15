@@ -6,8 +6,10 @@ import cyz.ink.portfolio.dao.HoldDAO;
 import cyz.ink.portfolio.dao.TradingHistoryDAO;
 import cyz.ink.portfolio.pojo.FundManager;
 import cyz.ink.portfolio.pojo.Hold;
+import cyz.ink.portfolio.pojo.HoldAndInstrumentBean;
 import cyz.ink.portfolio.pojo.TradingHistory;
 import cyz.ink.portfolio.service.HoldService;
+import cyz.ink.portfolio.service.InstrumentsValueService;
 import cyz.ink.portfolio.service.TradingHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -32,6 +34,9 @@ public class HoldController {
     FundManagerDAO fundManagerDAO;
     @Autowired
     TradingHistoryService tradingHistoryService;
+    @Autowired
+    InstrumentsValueService instrumentsValueService;
+
 
     @GetMapping("/sellPortfolio")
     public int sellPortfolio(HttpSession session,
@@ -58,11 +63,17 @@ public class HoldController {
     }
 
     @GetMapping("/getPortfolio")
-    public Page<Hold> addPortfolio(HttpSession session,
-                                   @RequestParam(value = "start", defaultValue = "0") int start,
-                                   @RequestParam(value = "size", defaultValue = "10") int size) {
+    public Page<HoldAndInstrumentBean> addPortfolio(HttpSession session,
+                                                    @RequestParam(value = "start", defaultValue = "0") int start,
+                                                    @RequestParam(value = "size", defaultValue = "10") int size) {
         FundManager fundManager = (FundManager) session.getAttribute("user");
         if (fundManager == null) return null;
         return holdService.list(fundManager, start, size);
+    }
+
+    @GetMapping(value = "/testAddPrice")
+    public int testAddPrice(@RequestParam(value = "value", defaultValue = "10") int value) {
+        instrumentsValueService.testCalculateInstrumentsValue(value);
+        return 1;
     }
 }

@@ -11,6 +11,7 @@
 <div id="workingAreaDiv">
 
     <div id="selectInstrumentTypeDiv">
+        <h2>Upload Instrument Price File</h2>
         <select class="form-control" v-model="uploadInstrumentType">
             <option value="Bonds">Bonds</option>
             <option value="Stocks">Stocks</option>
@@ -20,24 +21,26 @@
         <input id="singleFile" style="width: 10em;" type="file" @change="getSingleFile($event)"/>
     </div>
 
+
+    <h2>Instruments Information</h2>
     <table class="table ">
         <thead>
         <tr class="info">
             <th @click="sortInstrumentBy('id')">
-                <a class="columnName">id</a>
+                <a class="columnName">instrument id</a>
             </th>
             <th @click="sortInstrumentBy('symbol')">
-                <a class="columnName">symbol</a>
+                <a class="columnName">instrument symbol</a>
             </th>
             <th @click="sortInstrumentBy('name')">
-                <a class="columnName">name</a>
+                <a class="columnName">instrument name</a>
             </th>
             <th @click="sortInstrumentBy('price')">
-                <a class="columnName">price</a>
+                <a class="columnName">instrument price</a>
             </th>
 
             <th @click="sortInstrumentBy('type')">
-                <a class="columnName">type</a>
+                <a class="columnName">instrument type</a>
             </th>
         </tr>
         </thead>
@@ -51,12 +54,20 @@
         </tr>
         </tbody>
     </table>
-
+    <button class="button button-primary button-glow button-tiny button-pill button-jumbo" @click="priceRise10(-10)">all
+        instruments - $10
+    </button>
+    <button class="button button-primary button-glow button-tiny button-pill button-jumbo" @click="priceRise10(10)">all
+        instruments + $10
+    </button>
+    <br>
     <ul class="nav nav-tabs">
         <li @click="changeInstrumentsPage('-1')"><a>上一页</a></li>
         <li><a>{{instrumentStart+1}}</a></li>
         <li @click="changeInstrumentsPage('1')"><a>下一页</a></li>
     </ul>
+
+    <h2>FundManagers Information</h2>
 
     <table class="table ">
             <thead>
@@ -65,13 +76,13 @@
                     <a class="columnName">id</a>
                 </th>
                 <th @click="sortBy('name')">
-                    <a class="columnName">name</a>
+                    <a class="columnName">fund manager name</a>
                 </th>
                 <th @click="sortBy('instrumentsValue')">
-                    <a class="columnName">instruments</a>
+                    <a class="columnName">total values of fund manager's portfolio</a>
                 </th>
                 <th @click="sortBy('balance')">
-                    <a class="columnName">profit</a>
+                    <a class="columnName">profit of portfolio</a>
                 </th>
             </tr>
             </thead>

@@ -13,7 +13,7 @@
 
     <div class="instrumentAndChart">
         <div class="instruments">
-            <ul class="nav nav-tabs ">
+            <ul class="nav nav-tabs " style="font-weight: bold;">
                 <li role="presentation" :class="{'active':type=='Bonds'}" @click="changeInstrument('Bonds')">
                     <a>Bonds</a></li>
                 <li role="presentation" :class="{'active':type=='Stocks'}" @click="changeInstrument('Stocks')">
@@ -23,7 +23,7 @@
                 <li role="presentation" :class="{'active':type=='ETFs'}" @click="changeInstrument('ETFs')"><a>ETFs</a>
                 </li>
 
-                <li><a>portfolio value : {{currentFundManager.instrumentsValue}}</a></li>
+                <li><a>total value : {{currentFundManager.instrumentsValue}}</a></li>
                 <li class="pull-right" @click="changeInstrumentsPage('1')"><a>下一页</a></li>
                 <li class="pull-right"><a>{{start+1}}</a></li>
                 <li class="pull-right" @click="changeInstrumentsPage('-1')"><a>上一页</a></li>
@@ -64,25 +64,22 @@
                             <span class="glyphicon glyphicon-resize-vertical"/>
                         </a>
                     </th>
-                    <th>Add</th>
+                    <th v-if="currentFundManager==''||currentFundManager.name!='Admin'">Add</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="(bean,index) in beans" :key="bean.index">
-                    <!--<td @click="changeInstrumentChart(bean.instrumentId)">{{bean.instrumentId}}</td>-->
-                    <!--<td>{{bean.instrument.name}}</td>-->
-                    <td @click="changeInstrumentChart(bean.id)">{{bean.symbol}}</td>
+                <tr v-for="(bean,index) in beans" :key="bean.index" @mouseover="changeInstrumentChart(bean.id)">
+                    <td>{{bean.symbol}}</td>
                     <td>{{bean.currentPrice[0].date}}</td>
                     <td>{{bean.currentPrice[0].price}}</td>
                     <td>{{bean.currentPrice[0].high}}</td>
                     <td>{{bean.currentPrice[0].low}}</td>
                     <td>{{bean.currentPrice[0].open}}</td>
                     <td>{{bean.currentPrice[0].close}}</td>
-                    <!--<td>{{bean.changed}}</td>-->
-                    <td><input @mouseover="" type="number" min="1" style="width: 50px;color: black"
-                               v-model="numberOfInstrumentToBuy">
-                    </td>
-                    <td>
+                    <!--<td  v-if="currentFundManager==''||currentFundManager.name!='Admin'"><input type="number" min="1" style="width: 50px;color: black"-->
+                    <!--v-model="numberOfInstrumentToBuy">-->
+                    <!--</td>-->
+                    <td v-if="currentFundManager==''||currentFundManager.name!='Admin'">
                         <button class="button  button-primary button-glow button-tiny button-pill button-jumbo"
                                 :disabled="numberOfInstrumentToBuy<1"
                                 @click="add2Portfolio(bean.id,bean.currentPrice[0].price)">buy

@@ -1,5 +1,6 @@
 package cyz.ink.portfolio.interceptor;
 
+import cyz.ink.portfolio.pojo.FundManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Component
 public class LoginInterceptor implements HandlerInterceptor {
@@ -18,21 +20,11 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
-        if(request.getRequestURI().matches("/admin*")){
-            logger.warn("someone want to reach admin page");
-            if (request.getCookies() == null){
-                response.sendRedirect("/login");
-                return false;
-            }
-            for (Cookie cookie : request.getCookies()){
-                if (cookie.getName().equals("t") && cookie.getValue().equals("tickets"))return true;
-            }
-            logger.info("fail to access admin page");
-            response.sendRedirect("/login");
+        FundManager fundManager = (FundManager) request.getSession().getAttribute("user");
+        if (fundManager == null || !fundManager.getName().equals("Admin")) {
+            response.sendRedirect("/index");
             return false;
         }
-        logger.warn("someone reach admin page successfully");
         return true;
     }
 

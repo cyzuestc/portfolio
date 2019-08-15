@@ -21,6 +21,16 @@ $(function () {
             this.listInstrument();
         },
         methods:{
+            priceRise10: function (value) {
+                var url = "/testAddPrice?value=" + value;
+                let vm = this;
+                axios.get(url).then(function (response) {
+                    if (response.data == 1) {
+                        vm.list();
+                        vm.listInstrument();
+                    }
+                });
+            },
             addSingle: function () {
                 if (this.singleFile == null) return;
                 var url = "/uploadExcel?instrumentType=" + data4vue.uploadInstrumentType;
@@ -54,7 +64,6 @@ $(function () {
                     data4vue.fundManagerPagination = response.data;
                 });
             },
-
             listInstrument: function () {
                 console.log("vue成功加载");
                 var url = "/getInstruments?start=" + this.instrumentStart + "&size=" + this.instrumentSize;
