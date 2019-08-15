@@ -12,20 +12,20 @@ body {
     margin: 0 auto;
 }
 
-#instrumentAndChartDiv {
+.instrumentAndChart {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 20px auto;
 }
 
-#instrumentsDiv {
+.instruments {
     margin-left: 20px;
     display: inline-block;
     /*width: 40%;*/
 }
 
-#chartDiv {
+.chart {
     margin-right: 10px;
     display: inline-block;
     /*width: 40%;*/
@@ -35,7 +35,11 @@ body {
     height: 550px;
 }
 
-#workingAreaDiv td, th {
+#workingAreaDiv td {
+    vertical-align: middle;
+}
+
+#instrumentsDiv th {
     vertical-align: middle;
 }
 
@@ -43,8 +47,54 @@ body {
     color: yellow;
 }
 
+#HoldDiv {
+    text-align: center;
+    /*width: 80%;*/
+    margin: 0 auto;
+}
+
+#tradingHistory {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
 #instrumentsDiv > ul > li > a {
     color: #004985;
     font-size: 18px;
     font-weight: bold;
+}
+
+#HoldDiv th {
+    text-align: center;
+}
+
+#HoldDiv ul {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#HoldDiv a {
+    color: #004985;
+}
+
+#tradingHistory th {
+    text-align: center;
+}
+
+#tradingHistory ul {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#tradingHistory a {
+    color: #004985;
+}
+
+.tableTitle {
+    font-size: 25px;
+    color: #2e6da4;
+    background-color: #afd9ee;
+    border-radius: 3px;
 }

@@ -23,6 +23,7 @@ $(function () {
                     console.log(response.data == '');
                     if (response.data == 1) {
                         data4vue.currentFundManager = '';
+                        window.location.href = "/index";
                     }
                 });
             }

@@ -12,11 +12,8 @@
 <div id="workingAreaDiv">
     <!--trading History-->
     <div id="tradingHistory">
-        <ul class="nav nav-tabs ">
-            <li @click="changeTradingHistoryPage('-1')"><a>上一页</a></li>
-            <li><a>{{tradingHistoryStart+1}}</a></li>
-            <li @click="changeTradingHistoryPage('1')"><a>下一页</a></li>
-        </ul>
+
+        <span class="tableTitle">Trading History</span>
         <table class="table">
             <thead>
             <tr>
@@ -37,6 +34,11 @@
             </tr>
             </tbody>
         </table>
+        <ul class="nav nav-tabs ">
+            <li @click="changeTradingHistoryPage('-1')"><a>上一页</a></li>
+            <li><a>{{tradingHistoryStart+1}}</a></li>
+            <li @click="changeTradingHistoryPage('1')"><a>下一页</a></li>
+        </ul>
     </div>
 
 </div>

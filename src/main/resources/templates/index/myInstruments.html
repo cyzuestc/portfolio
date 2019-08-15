@@ -11,37 +11,47 @@
 
 <div id="workingAreaDiv">
 
-    <!--portfolio数据-->
-    <div id="HoldDiv">
-        <ul class="nav nav-tabs ">
-            <li @click="changePortfolioPage('-1')"><a>上一页</a></li>
-            <li><a>{{portfolioStart+1}}</a></li>
-            <li @click="changePortfolioPage('1')"><a>下一页</a></li>
-        </ul>
+    <div class="instrumentAndChart">
+        <!--portfolio数据-->
+        <div id="HoldDiv" class="instruments">
+            <span class="tableTitle">My Instrument</span>
+            <a>portfolio value : {{currentFundManager.instrumentsValue}}</a>
+            <table class="table">
+                <thead>
+                <tr>
+                    <!--<th>id</th>-->
+                    <th>name</th>
+                    <th>price</th>
+                    <th>volume</th>
+                    <th>sell</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(bean,index) in portfolioBeans">
+                    <!--<td>{{bean.id}}</td>-->
+                    <td @click="changeInstrumentChart(bean.instrument.id)">{{bean.instrument.symbol}}</td>
+                    <td>{{bean.instrument.currentPrice[0].price}}</td>
+                    <td>{{bean.volume}}</td>
+                    <td style="color: black">
+                        <input min="1" type="number" style="width: 60px" v-model="numberOfInstrumentToSell">
+                        <button class="button  button-primary button-glow button-tiny button-pill button-jumbo"
+                                :disabled="numberOfInstrumentToSell<1" @click="sellPortfolio(bean.instrumentId)">sell
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <ul class="nav nav-tabs ">
+                <li @click="changePortfolioPage('-1')"><a>上一页</a></li>
+                <li><a>{{portfolioStart+1}}</a></li>
+                <li @click="changePortfolioPage('1')"><a>下一页</a></li>
+            </ul>
+        </div>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>id</th>
-                <th>instrument</th>
-                <th>volume</th>
-                <th>Sell</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="(bean,index) in portfolioBeans">
-                <td>{{bean.id}}</td>
-                <td>{{bean.instrument.symbol}}</td>
-                <td>{{bean.volume}}</td>
-                <td style="color: black">
-                    <input min="1" type="number" style="width: 60px" v-model="numberOfInstrumentToSell">
-                    <button class="button  button-primary button-glow button-tiny button-pill button-jumbo"
-                            :disabled="numberOfInstrumentToSell<1" @click="sellPortfolio(bean.instrumentId)">sell
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="chart">
+            <div id="main">
+            </div>
+        </div>
     </div>
 
 

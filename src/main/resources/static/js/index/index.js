@@ -27,7 +27,8 @@ $(function () {
         rawData: [
             ['2019/1/24', 2320.26, 2320.26, 2287.3, 2362.94],
         ],
-        instrumentId: 102,
+        instrumentId: 1,
+        currentFundManager: '',
     };
 
     var vue = new Vue({
@@ -38,8 +39,15 @@ $(function () {
             this.listPortfolio();
             this.listTradingHistory();
             this.getChartData();
+            this.getHeaderInfo();
         },
         methods:{
+            getHeaderInfo: function () {
+                var url = "/getHeaderInfo";
+                axios.get(url).then(function (response) {
+                    data4vue.currentFundManager = response.data;
+                });
+            },
             listTradingHistory: function () {
                 var url = "/tradingHistoryList?start=" + this.tradingHistoryStart + "&size=" + this.tradingHistorySize;
                 axios.get(url).then(function (response) {
@@ -59,6 +67,7 @@ $(function () {
                         alert("sold!");
                         vue.listPortfolio();
                         vue.listTradingHistory();
+                        vue.getHeaderInfo();
                     }
                 });
             },
@@ -77,7 +86,7 @@ $(function () {
                         alert("购买成功");
                         vue.listPortfolio();
                         vue.listTradingHistory();
-                        // vm.$emit('updatePrice')
+                        vue.getHeaderInfo();
                     }
                 });
             },

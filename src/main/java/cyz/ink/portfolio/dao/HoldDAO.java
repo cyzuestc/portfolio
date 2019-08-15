@@ -15,5 +15,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface HoldDAO extends JpaRepository<Hold,Integer> {
     Hold getHoldByInstrumentIdAndFundManagerId(int InstrumentId, int fundManagerId);
 
-    Page<Hold> findHoldsByFundManagerId(int fundManagerId, Pageable pageable);
+    Page<Hold> findAllByFundManagerId(int fundManagerId, Pageable pageable);
 }

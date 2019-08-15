@@ -4,7 +4,6 @@ body {
     background: linear-gradient(to bottom right, #00bdf2,#00b3f0 18%,#0066b3 77%,#004985);
     background-size:cover;
     background-attachment: fixed;
-    /*text-align: center;*/
 }
 #headDiv{
     height:100px;
@@ -15,9 +14,6 @@ a:hover{
     text-decoration: none;
 }
 
-tbody {
-    background-color: #5bc0de;
-}
 
 #selectInstrumentTypeDiv {
     text-align: center;
@@ -37,3 +33,29 @@ tbody {
     display: inline-block;
 }
 
+.table {
+    width: 80%;
+    margin: 0px auto;
+    color: #fff;
+    font-size: 16px;
+    background-color: #004985;
+}
+
+ul {
+    display: inline-block;
+}
+
+ul > li > a {
+    color: #004985;
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+th {
+    text-align: center;
+}
+
+#workingAreaDiv {
+    text-align: center;
+}

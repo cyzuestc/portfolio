@@ -8,6 +8,7 @@ $(function () {
         instrumentSize: 10,
         listFundManagerStart: 0,
         listFundManagerSize: 10,
+        fundManagerPagination: [],
         singleFile: '',
         uploadInstrumentType: 'Bonds',
     };
@@ -50,6 +51,7 @@ $(function () {
                 var url = "/listFundManager?start=" + this.listFundManagerStart + "&size=" + this.listFundManagerSize;
                 axios.get(url).then(function (response) {
                     data4vue.beans = response.data.content;
+                    data4vue.fundManagerPagination = response.data;
                 });
             },
 
@@ -70,6 +72,16 @@ $(function () {
                 }
                 if (addPageNum == 1 && data4vue.instrumentStart < data4vue.instrumentsPagination.totalPages - 1) {
                     data4vue.instrumentStart++;
+                    this.listInstrument();
+                }
+            },
+            changeFundManagersPage: function (addPageNum) {
+                if (addPageNum == -1 && data4vue.listFundManagerStart > 0) {
+                    data4vue.listFundManagerStart--;
+                    this.listInstrument();
+                }
+                if (addPageNum == 1 && data4vue.listFundManagerStart < data4vue.fundManagerPagination.totalPages - 1) {
+                    data4vue.listFundManagerStart++;
                     this.listInstrument();
                 }
             },

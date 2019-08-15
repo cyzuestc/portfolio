@@ -24,16 +24,20 @@
         <thead>
         <tr class="info">
             <th @click="sortInstrumentBy('id')">
-                <a href="#" class="columnName">id</a>
+                <a class="columnName">id</a>
             </th>
             <th @click="sortInstrumentBy('symbol')">
-                <a href="#" class="columnName">symbol</a>
+                <a class="columnName">symbol</a>
             </th>
             <th @click="sortInstrumentBy('name')">
-                <a href="#" class="columnName">名字</a>
+                <a class="columnName">name</a>
             </th>
+            <th @click="sortInstrumentBy('price')">
+                <a class="columnName">price</a>
+            </th>
+
             <th @click="sortInstrumentBy('type')">
-                <a href="#" class="columnName">type</a>
+                <a class="columnName">type</a>
             </th>
         </tr>
         </thead>
@@ -42,35 +46,32 @@
             <td>{{bean.id}}</td>
             <td>{{bean.symbol}}</td>
             <td>{{bean.name}}</td>
+            <td>{{bean.currentPrice[0].price}}</td>
             <td>{{bean.type}}</td>
         </tr>
         </tbody>
     </table>
 
-    <ul class="nav nav-tabs ">
+    <ul class="nav nav-tabs">
         <li @click="changeInstrumentsPage('-1')"><a>上一页</a></li>
         <li><a>{{instrumentStart+1}}</a></li>
         <li @click="changeInstrumentsPage('1')"><a>下一页</a></li>
     </ul>
 
-    <button @click="addInstrumentPageStart()">
-        下一页
-    </button>
-
     <table class="table ">
             <thead>
-            <tr class="success">
+            <tr class="info">
                 <th @click="sortBy('id')">
-                    <a href="#" class="columnName">id</a>
+                    <a class="columnName">id</a>
                 </th>
                 <th @click="sortBy('name')">
-                    <a href="#" class="columnName">name</a>
+                    <a class="columnName">name</a>
                 </th>
                 <th @click="sortBy('instrumentsValue')">
-                    <a href="#" class="columnName">instruments</a>
+                    <a class="columnName">instruments</a>
                 </th>
                 <th @click="sortBy('balance')">
-                    <a href="#" class="columnName">profit</a>
+                    <a class="columnName">profit</a>
                 </th>
             </tr>
             </thead>
@@ -83,6 +84,12 @@
             </tr>
             </tbody>
     </table>
+
+    <ul class="nav nav-tabs ">
+        <li @click="changeFundManagersPage('-1')"><a>上一页</a></li>
+        <li><a>{{listFundManagerStart+1}}</a></li>
+        <li @click="changeFundManagersPage('1')"><a>下一页</a></li>
+    </ul>
 </div>
 </body>
 

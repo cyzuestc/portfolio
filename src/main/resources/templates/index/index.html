@@ -11,8 +11,8 @@
 
 <div id="workingAreaDiv">
 
-    <div id="instrumentAndChartDiv">
-        <div id="instrumentsDiv">
+    <div class="instrumentAndChart">
+        <div class="instruments">
             <ul class="nav nav-tabs ">
                 <li role="presentation" :class="{'active':type=='Bonds'}" @click="changeInstrument('Bonds')">
                     <a>Bonds</a></li>
@@ -23,15 +23,15 @@
                 <li role="presentation" :class="{'active':type=='ETFs'}" @click="changeInstrument('ETFs')"><a>ETFs</a>
                 </li>
 
+                <li><a>portfolio value : {{currentFundManager.instrumentsValue}}</a></li>
                 <li class="pull-right" @click="changeInstrumentsPage('1')"><a>下一页</a></li>
                 <li class="pull-right"><a>{{start+1}}</a></li>
                 <li class="pull-right" @click="changeInstrumentsPage('-1')"><a>上一页</a></li>
             </ul>
 
-
             <table class="table  table-condensed">
                 <thead>
-                <tr>
+                <tr style="height: 10%;">
                     <th>symbol</th>
                     <th @click="sortBy('date')">
                         <a href="#" class="columnName">date
@@ -64,12 +64,6 @@
                             <span class="glyphicon glyphicon-resize-vertical"/>
                         </a>
                     </th>
-                    <!--<th @click="sortBy('changed')">-->
-                    <!--<a href="#" class="columnName">changed-->
-                    <!--<span class="glyphicon glyphicon-resize-vertical"/>-->
-                    <!--</a>-->
-                    <!--</th>-->
-                    <!--<th>Cost</th>-->
                     <th>Add</th>
                 </tr>
                 </thead>
@@ -98,7 +92,7 @@
                 </tbody>
             </table>
         </div>
-        <div id="chartDiv">
+        <div class="chart">
             <div id="main">
             </div>
         </div>
