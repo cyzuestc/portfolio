@@ -36,7 +36,6 @@ public class HistoryPrice {
     private Date date;
 
     @ManyToOne(targetEntity = Instrument.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    mappedBy = "customer",
     @JoinColumn(name = "history_price_instrument", referencedColumnName = "id")
     private Instrument instrument;
 

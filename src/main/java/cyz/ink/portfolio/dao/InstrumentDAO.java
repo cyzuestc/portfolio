@@ -20,4 +20,7 @@ import java.util.List;
 
 public interface InstrumentDAO extends JpaRepository<Instrument,Integer> {
 
+    Instrument findInstrumentBySymbol(String symbol);
+
+    Page<Instrument> findAllByType(InstrumentType instrumentType, Pageable pageable);
 }

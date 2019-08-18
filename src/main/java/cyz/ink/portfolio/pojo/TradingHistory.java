@@ -29,11 +29,11 @@ public class TradingHistory {
     @JsonFormat(pattern = "YYYY-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date date;
 
-    @ManyToOne(targetEntity = Instrument.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Instrument.class, fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "history_instrument_id", referencedColumnName = "id")
     private Instrument instrument;
 
-    @ManyToOne(targetEntity = FundManager.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = FundManager.class, cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     @JoinColumn(name = "history_fund_manager_id", referencedColumnName = "id")
     public FundManager fundManager;
 

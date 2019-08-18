@@ -37,9 +37,7 @@ public class CurrentPrice {
     @JsonFormat(pattern = "YYYY-MM-dd", timezone = "GMT+8")
     Date date;
 
-
-//    @OneToOne(cascade =CascadeType.ALL,fetch = FetchType.LAZY)//    mappedBy = "customer",
-//    @JoinColumn(name="instrument_id",referencedColumnName="id")
+//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "instrument_id", referencedColumnName = "id")
 //    private Instrument instrument;
-
 }

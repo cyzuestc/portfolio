@@ -1,6 +1,7 @@
 package cyz.ink.portfolio.dao;
 
 import cyz.ink.portfolio.pojo.HistoryPrice;
+import cyz.ink.portfolio.pojo.Instrument;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,5 +18,7 @@ import java.util.List;
  **/
 
 public interface HistoryPriceDAO extends JpaRepository<HistoryPrice,Integer> {
+    List<HistoryPrice> findAllByInstrument(Instrument one);
 
+    HistoryPrice findHistoryPriceByInstrumentAndDate(Instrument instrument, Date date);
 }

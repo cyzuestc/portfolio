@@ -152,9 +152,7 @@ $(function () {
                 axios.get(url).then(function (response) {
                     //获取到hold数据
                     data4vue.portfolioBeans = response.data.content;
-                    console.log(this.portfolioBeans)
-                    //获取到hold分页数据
-                    data4vue.portfolioPagination = response.data.content[0]['totalPages'];
+                    this.portfolioBeans = response.data;
                 });
             },
             changeInstrument: function (instrumentType) {

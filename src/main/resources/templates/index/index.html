@@ -70,19 +70,19 @@
                 <tbody>
                 <tr v-for="(bean,index) in beans" :key="bean.index" @mouseover="changeInstrumentChart(bean.id)">
                     <td>{{bean.symbol}}</td>
-                    <td>{{bean.currentPrice[0].date}}</td>
-                    <td>{{bean.currentPrice[0].price}}</td>
-                    <td>{{bean.currentPrice[0].high}}</td>
-                    <td>{{bean.currentPrice[0].low}}</td>
-                    <td>{{bean.currentPrice[0].open}}</td>
-                    <td>{{bean.currentPrice[0].close}}</td>
+                    <td>{{bean.currentPrice.date}}</td>
+                    <td>{{bean.currentPrice.price}}</td>
+                    <td>{{bean.currentPrice.high}}</td>
+                    <td>{{bean.currentPrice.low}}</td>
+                    <td>{{bean.currentPrice.open}}</td>
+                    <td>{{bean.currentPrice.close}}</td>
                     <!--<td  v-if="currentFundManager==''||currentFundManager.name!='Admin'"><input type="number" min="1" style="width: 50px;color: black"-->
                     <!--v-model="numberOfInstrumentToBuy">-->
                     <!--</td>-->
                     <td v-if="currentFundManager==''||currentFundManager.name!='Admin'">
                         <button class="button  button-primary button-glow button-tiny button-pill button-jumbo"
                                 :disabled="numberOfInstrumentToBuy<1"
-                                @click="add2Portfolio(bean.id,bean.currentPrice[0].price)">buy
+                                @click="add2Portfolio(bean.id,bean.currentPrice.price)">buy
                         </button>
                     </td>
                 </tr>

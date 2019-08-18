@@ -1,6 +1,7 @@
 package cyz.ink.portfolio.dao;
 
 import cyz.ink.portfolio.pojo.CurrentPrice;
+import cyz.ink.portfolio.pojo.InstrumentType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

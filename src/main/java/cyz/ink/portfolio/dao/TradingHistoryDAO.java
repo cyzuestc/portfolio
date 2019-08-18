@@ -1,5 +1,6 @@
 package cyz.ink.portfolio.dao;
 
+import cyz.ink.portfolio.pojo.FundManager;
 import cyz.ink.portfolio.pojo.TradingHistory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,4 +14,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  **/
 
 public interface TradingHistoryDAO extends JpaRepository<TradingHistory,Integer> {
+    Page<TradingHistory> findAllByFundManager(FundManager fundManager, Pageable pageable);
 }

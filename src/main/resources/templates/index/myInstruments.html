@@ -29,11 +29,11 @@
                 </thead>
                 <tbody>
                 <tr v-for="(bean,index) in portfolioBeans" @mouseover="changeInstrumentChart(bean.instrument.id)">
-                    <td>{{bean.instrument.id}}</td>
-                    <td>{{bean.instrument.symbol}}</td>
-                    <td>{{bean.instrument.name}}</td>
-                    <td>{{bean.currentPrice.price}}</td>
-                    <td>{{bean.hold.volume}}</td>
+                    <td>{{bean.id}}</td>
+                    <td>{{bean.symbol}}</td>
+                    <td>{{bean.name}}</td>
+                    <td>{{bean.price}}</td>
+                    <td>{{bean.volume}}</td>
                     <td style="color: black">
                         <!--<input min="1" type="number" style="width: 60px" v-model="numberOfInstrumentToSell">-->
                         <button class="button  button-primary button-glow button-tiny button-pill button-jumbo"

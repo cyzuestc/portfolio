@@ -1,6 +1,8 @@
 package cyz.ink.portfolio.dao;
 
+import cyz.ink.portfolio.pojo.FundManager;
 import cyz.ink.portfolio.pojo.Hold;
+import cyz.ink.portfolio.pojo.Instrument;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,4 +17,7 @@ import java.util.List;
  **/
 
 public interface HoldDAO extends JpaRepository<Hold,Integer> {
+    Hold getHoldByInstrumentAndFundManager(Instrument instrument, FundManager fundManager);
+
+    Page<Hold> findHoldsByFundManager(FundManager fundManager, Pageable pageable);
 }
