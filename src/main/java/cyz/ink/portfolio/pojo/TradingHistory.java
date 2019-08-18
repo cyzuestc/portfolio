@@ -18,7 +18,7 @@ import java.util.Date;
 @Entity
 @Slf4j
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
-@Table(name = "TradingHistory")
+@Table(name = "tradinghistory")
 public class TradingHistory {
     @Id
     @Column(name = "id")
@@ -28,14 +28,13 @@ public class TradingHistory {
     private int volume;
     @JsonFormat(pattern = "YYYY-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date date;
-    @Column(name = "fundManager_id")
-    private int fundManagerId;
-    @Column(name = "instrument_id")
-    private int instrumentId;
 
-    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "instrument_id", insertable = false, updatable = false)
-
+    @ManyToOne(targetEntity = Instrument.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "history_instrument_id", referencedColumnName = "id")
     private Instrument instrument;
+
+    @ManyToOne(targetEntity = FundManager.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "history_fund_manager_id", referencedColumnName = "id")
+    public FundManager fundManager;
 
 }

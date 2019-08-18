@@ -17,7 +17,7 @@ import java.util.Set;
 @Entity
 @Slf4j
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
-@Table(name = "Instrument")
+@Table(name = "instrument")
 public class Instrument {
     @Id
     @Column(name = "id")
@@ -29,7 +29,7 @@ public class Instrument {
     private InstrumentType type;
 
 
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "instrument_id")
-    private Set<CurrentPrice> currentPrice;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "currentprice_id", referencedColumnName = "id")
+    private CurrentPrice currentPrice;
 }

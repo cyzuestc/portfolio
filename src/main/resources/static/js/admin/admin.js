@@ -41,10 +41,10 @@ $(function () {
 
                     if (response.data == 1) {
                         vue.singleFile = null;
-                        alert("上传成功")
+                        alert("success")
                         vm.listInstrument();
                     } else {
-                        alert("上传失败")
+                        alert("fail")
                     }
                 });
             },

@@ -9,6 +9,8 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @ Author      : Zink
@@ -32,9 +34,12 @@ public class CurrentPrice {
     private float open;
     private float close;
     private float changed;
-    @Column(name = "instrument_id")
-    private int instrumentId;
     @JsonFormat(pattern = "YYYY-MM-dd", timezone = "GMT+8")
     Date date;
+
+
+//    @OneToOne(cascade =CascadeType.ALL,fetch = FetchType.LAZY)//    mappedBy = "customer",
+//    @JoinColumn(name="instrument_id",referencedColumnName="id")
+//    private Instrument instrument;
 
 }

@@ -13,5 +13,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  **/
 
 public interface TradingHistoryDAO extends JpaRepository<TradingHistory,Integer> {
-    Page<TradingHistory> findTradingHistoriesByFundManagerId(int id, Pageable pageable);
 }

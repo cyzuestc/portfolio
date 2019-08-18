@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @ Author      : Zink
@@ -30,9 +32,12 @@ public class HistoryPrice {
     private float open;
     private float close;
     private float changed;
-    @Column(name = "instrument_id")
-    private int instrumentId;
     @JsonFormat(pattern = "YYYY-MM-dd", timezone = "GMT+8")
     private Date date;
+
+    @ManyToOne(targetEntity = Instrument.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    mappedBy = "customer",
+    @JoinColumn(name = "history_price_instrument", referencedColumnName = "id")
+    private Instrument instrument;
 
 }

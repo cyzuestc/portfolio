@@ -11,7 +11,7 @@ import java.util.Set;
 @Entity
 @Slf4j
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
-@Table(name = "FundManager")
+@Table(name = "fundmanager")
 public class FundManager {
     @Id
     @Column(name = "id")

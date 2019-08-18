@@ -97,8 +97,7 @@ public class AddData {
         for (int i = 1; i < 100; i++) {
             Hold hold = new Hold();
             hold.setId(i);
-            hold.setFundManagerId(i);
-            hold.setInstrumentId(i);
+//            hold.setFundManagerId(i);
             hold.setVolume(i);
             holdDAO.save(hold);
         }
@@ -114,7 +113,6 @@ public class AddData {
             float price = (float) (new Random().nextInt(5)*i);
 
             currentPrice.setId(i);
-            currentPrice.setInstrumentId(i);
             currentPrice.setChanged(0.05f);
             currentPrice.setOpen(price);
             currentPrice.setClose(price);
@@ -137,7 +135,6 @@ public class AddData {
 
                 float price = (float) (new Random().nextInt(200)*i);
 
-                historyPrice.setInstrumentId(j);
                 historyPrice.setChanged(0.05f);
                 historyPrice.setOpen(price);
                 historyPrice.setClose(price);
@@ -159,8 +156,6 @@ public class AddData {
             TradingHistory tradingHistory = new TradingHistory();
             //从当前时间-1天
             tradingHistory.setDate(new Date(1565351427-i*3600));
-            tradingHistory.setFundManagerId(i);
-            tradingHistory.setInstrumentId(i);
 
             float price = (float) (new Random().nextInt(200)*i);
             tradingHistory.setPrice(price);

@@ -15,9 +15,4 @@ import java.util.List;
  **/
 
 public interface HoldDAO extends JpaRepository<Hold,Integer> {
-    Hold getHoldByInstrumentIdAndFundManagerId(int InstrumentId, int fundManagerId);
-
-    Page<Hold> findAllByFundManagerId(int fundManagerId, Pageable pageable);
-
-    List<Hold> findAllByFundManagerId(int fundManagerId);
 }

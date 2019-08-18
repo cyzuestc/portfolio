@@ -57,7 +57,7 @@ $(function () {
             },
             sellPortfolio: function (instrumentId) {
                 var volume = 1;
-                volume = prompt('how many?')
+                volume = prompt('quantity?')
                 if (isNaN(volume)) {
                     alert("please input number");
                     return;
@@ -79,7 +79,7 @@ $(function () {
             },
             add2Portfolio: function (instrumentId, price) {
                 var volume = 1;
-                volume = prompt('how many?')
+                volume = prompt('quantity?')
                 if (isNaN(volume)) {
                     alert("please input number");
                     return;
@@ -246,7 +246,7 @@ $(function () {
 
                 option = {
                     title: {
-                        text: ' Citi Portfolio',
+                        text: ' Find®Fund',
                         left: 0
                     },
                     tooltip: {
@@ -256,7 +256,7 @@ $(function () {
                         }
                     },
                     legend: {
-                        data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30']
+                        data: ['daily K', 'MA5', 'MA10', 'MA20', 'MA30']
                     },
                     grid: {
                         left: '10%',

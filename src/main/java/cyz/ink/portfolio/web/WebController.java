@@ -1,7 +1,5 @@
 package cyz.ink.portfolio.web;
 
-import cyz.ink.portfolio.service.InstrumentsValueService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 

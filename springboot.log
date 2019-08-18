@@ -1,0 +1,263 @@
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** Starting PortfolioApplication on cyzink with PID 128344 (C:\Users\cyzink\IdeaProjects\portfolio\target\classes started by cyzink in C:\Users\cyzink\IdeaProjects\portfolio)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** No active profile set, falling back to default profiles: default
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor **** Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor **** For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Finished Spring Data repository scanning in 132ms. Found 7 repository interfaces.
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker **** Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b55c9043] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.boot.web.embedded.tomcat.TomcatWebServer **** Tomcat initialized with port(s): 8080 (http)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardService **** Starting service [Tomcat]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardEngine **** Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] **** Initializing Spring embedded WebApplicationContext
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.springframework.web.context.ContextLoader **** Root WebApplicationContext: initialization completed in 2227 ms
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------ERROR ***o.s.boot.web.embedded.tomcat.TomcatStarter **** Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'statViewServlet' defined in class path resource [cyz/ink/portfolio/configuration/DruidConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'statViewServlet' threw exception; nested exception is java.lang.NoClassDefFoundError: com/alibaba/druid/support/http/StatViewServlet
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardService **** Stopping service [Tomcat]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------WARN  ***o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext **** Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.a.l.ConditionEvaluationReportLoggingListener **** 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------ERROR ***org.springframework.boot.SpringApplication **** Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:743)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:390)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at cyz.ink.portfolio.PortfolioApplication.main(PortfolioApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:124)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:416)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'statViewServlet' defined in class path resource [cyz/ink/portfolio/configuration/DruidConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'statViewServlet' threw exception; nested exception is java.lang.NoClassDefFoundError: com/alibaba/druid/support/http/StatViewServlet
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:627)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:202)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:96)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:85)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:253)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5132)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:456)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:105)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'statViewServlet' threw exception; nested exception is java.lang.NoClassDefFoundError: com/alibaba/druid/support/http/StatViewServlet
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622)
+	... 58 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/alibaba/druid/support/http/StatViewServlet
+	at cyz.ink.portfolio.configuration.DruidConfig.statViewServlet(DruidConfig.java:31)
+	at cyz.ink.portfolio.configuration.DruidConfig$$EnhancerBySpringCGLIB$$eea4879c.CGLIB$statViewServlet$0(<generated>)
+	at cyz.ink.portfolio.configuration.DruidConfig$$EnhancerBySpringCGLIB$$eea4879c$$FastClassBySpringCGLIB$$7c6eae1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at cyz.ink.portfolio.configuration.DruidConfig$$EnhancerBySpringCGLIB$$eea4879c.statViewServlet(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 59 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.alibaba.druid.support.http.StatViewServlet
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 70 common frames omitted
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** Starting PortfolioApplication on cyzink with PID 135208 (C:\Users\cyzink\IdeaProjects\portfolio\target\classes started by cyzink in C:\Users\cyzink\IdeaProjects\portfolio)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** No active profile set, falling back to default profiles: default
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor **** Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor **** For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Finished Spring Data repository scanning in 136ms. Found 7 repository interfaces.
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker **** Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c531d191] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.boot.web.embedded.tomcat.TomcatWebServer **** Tomcat initialized with port(s): 8080 (http)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardService **** Starting service [Tomcat]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardEngine **** Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] **** Initializing Spring embedded WebApplicationContext
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.springframework.web.context.ContextLoader **** Root WebApplicationContext: initialization completed in 2337 ms
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***com.alibaba.druid.pool.DruidDataSource **** {dataSource-1} inited
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.jpa.internal.util.LogHelper **** HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.Version **** HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.cfg.Environment **** HHH000206: hibernate.properties not found
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.annotations.common.Version **** HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.dialect.Dialect **** HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.orm.jpa.LocalContainerEntityManagerFactoryBean **** Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.f.a.AutowiredAnnotationBeanPostProcessor **** Autowired annotation is not supported on static fields: private static final org.slf4j.Logger cyz.ink.portfolio.interceptor.LoginInterceptor.logger
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.f.a.AutowiredAnnotationBeanPostProcessor **** Autowired annotation is not supported on static fields: private static final org.slf4j.Logger cyz.ink.portfolio.interceptor.LoginInterceptor.logger
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.scheduling.concurrent.ThreadPoolTaskExecutor **** Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------WARN  ***o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration **** spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.autoconfigure.OptionalLiveReloadServer **** LiveReload server is running on port 35729
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.boot.web.embedded.tomcat.TomcatWebServer **** Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** Started PortfolioApplication in 6.041 seconds (JVM running for 7.693)
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-1] ------INFO  ***o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] **** Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-1] ------INFO  ***org.springframework.web.servlet.DispatcherServlet **** Initializing Servlet 'dispatcherServlet'
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-1] ------INFO  ***org.springframework.web.servlet.DispatcherServlet **** Completed initialization in 12 ms
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-9] ------INFO  ***cyz.ink.portfolio.listerner.SessionListener **** sessionCreated
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-1] ------INFO  ***cyz.ink.portfolio.listerner.SessionListener **** sessionCreated
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-5] ------INFO  ***cyz.ink.portfolio.listerner.SessionListener **** sessionCreated
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-3] ------INFO  ***cyz.ink.portfolio.listerner.SessionListener **** sessionCreated
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-10] ------INFO  ***o.h.hql.internal.QueryTranslatorFactoryInitiator **** HHH000397: Using ASTQueryTranslatorFactory
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-3] ------INFO  ***cyz.ink.portfolio.listerner.SessionListener **** attributeAdded
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-5] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-7] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-3] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-9] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-2] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-8] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-1] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-10] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-4] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-5] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-7] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-3] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-9] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------WARN  ***org.hibernate.engine.jdbc.spi.SqlExceptionHelper **** SQL Error: 1146, SQLState: 42S02
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------ERROR ***org.hibernate.engine.jdbc.spi.SqlExceptionHelper **** Table 'portfolio.fund_manager' doesn't exist
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------WARN  ***o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver **** Resolved [org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet]
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-10] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-2] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-9] ------WARN  ***org.hibernate.engine.jdbc.spi.SqlExceptionHelper **** SQL Error: 1146, SQLState: 42S02
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-9] ------ERROR ***org.hibernate.engine.jdbc.spi.SqlExceptionHelper **** Table 'portfolio.fund_manager' doesn't exist
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-9] ------WARN  ***o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver **** Resolved [org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet]
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-5] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-1] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-3] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-4] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-8] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-7] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 250
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-2] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-9] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-10] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-5] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-1] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------WARN  ***org.hibernate.engine.jdbc.spi.SqlExceptionHelper **** SQL Error: 1146, SQLState: 42S02
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------ERROR ***org.hibernate.engine.jdbc.spi.SqlExceptionHelper **** Table 'portfolio.fund_manager' doesn't exist
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-6] ------WARN  ***o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver **** Resolved [org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet]
+2019-08-16------哈哈哈，看我，看我------[http-nio-8080-exec-10] ------INFO  ***cyz.ink.portfolio.service.HistoryPriceService **** 251
+2019-08-16------哈哈哈，看我，看我------[Thread-18] ------INFO  ***o.s.scheduling.concurrent.ThreadPoolTaskExecutor **** Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-16------哈哈哈，看我，看我------[Thread-18] ------INFO  ***o.s.orm.jpa.LocalContainerEntityManagerFactoryBean **** Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-16------哈哈哈，看我，看我------[Thread-18] ------INFO  ***com.alibaba.druid.pool.DruidDataSource **** {dataSource-1} closed
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** Starting PortfolioApplication on cyzink with PID 135208 (C:\Users\cyzink\IdeaProjects\portfolio\target\classes started by cyzink in C:\Users\cyzink\IdeaProjects\portfolio)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** No active profile set, falling back to default profiles: default
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.d.r.config.RepositoryConfigurationDelegate **** Finished Spring Data repository scanning in 102ms. Found 7 repository interfaces.
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker **** Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c531d191] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.boot.web.embedded.tomcat.TomcatWebServer **** Tomcat initialized with port(s): 8000 (http)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardService **** Starting service [Tomcat]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.apache.catalina.core.StandardEngine **** Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] **** Initializing Spring embedded WebApplicationContext
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.springframework.web.context.ContextLoader **** Root WebApplicationContext: initialization completed in 1595 ms
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***com.alibaba.druid.pool.DruidDataSource **** {dataSource-2} inited
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.jpa.internal.util.LogHelper **** HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***org.hibernate.dialect.Dialect **** HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.orm.jpa.LocalContainerEntityManagerFactoryBean **** Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.f.a.AutowiredAnnotationBeanPostProcessor **** Autowired annotation is not supported on static fields: private static final org.slf4j.Logger cyz.ink.portfolio.interceptor.LoginInterceptor.logger
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.f.a.AutowiredAnnotationBeanPostProcessor **** Autowired annotation is not supported on static fields: private static final org.slf4j.Logger cyz.ink.portfolio.interceptor.LoginInterceptor.logger
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.scheduling.concurrent.ThreadPoolTaskExecutor **** Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------WARN  ***o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration **** spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------WARN  ***org.thymeleaf.templatemode.TemplateMode **** [THYMELEAF][restartedMain] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.autoconfigure.OptionalLiveReloadServer **** LiveReload server is running on port 35729
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.boot.web.embedded.tomcat.TomcatWebServer **** Tomcat started on port(s): 8000 (http) with context path ''
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***cyz.ink.portfolio.PortfolioApplication **** Started PortfolioApplication in 3.012 seconds (JVM running for 1487.105)
+2019-08-16------哈哈哈，看我，看我------[restartedMain] ------INFO  ***o.s.b.d.a.ConditionEvaluationDeltaLoggingListener **** Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   MailSenderAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.mail.internet.MimeMessage', 'javax.activation.MimeType', 'org.springframework.mail.MailSender' (OnClassCondition)
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) matched (MailSenderAutoConfiguration.MailSenderCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.mail.MailSender; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MailSenderPropertiesConfiguration matched:
+      - @ConditionalOnProperty (spring.mail.host) matched (OnPropertyCondition)
+
+   MailSenderPropertiesConfiguration#mailSender matched:
+      - @ConditionalOnMissingBean (types: org.springframework.mail.javamail.JavaMailSenderImpl; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   MailSenderJndiConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'javax.mail.Session' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2019-08-16------哈哈哈，看我，看我------[Thread-27] ------INFO  ***o.s.scheduling.concurrent.ThreadPoolTaskExecutor **** Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-16------哈哈哈，看我，看我------[Thread-27] ------INFO  ***o.s.orm.jpa.LocalContainerEntityManagerFactoryBean **** Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-08-16------哈哈哈，看我，看我------[Thread-27] ------INFO  ***com.alibaba.druid.pool.DruidDataSource **** {dataSource-2} closed

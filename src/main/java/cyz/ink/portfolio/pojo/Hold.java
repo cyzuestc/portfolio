@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -18,7 +19,7 @@ import java.util.Set;
 @Entity
 @Slf4j
 @JsonIgnoreProperties({ "handler","hibernateLazyInitializer" })
-@Table(name = "Hold")
+@Table(name = "hold")
 public class Hold {
     @Id
     @Column(name = "id")
@@ -26,10 +27,11 @@ public class Hold {
     private int id;
     private int volume;
 
-    @Column(name = "fundManager_id")
-    private int fundManagerId;
+    @ManyToOne(targetEntity = Instrument.class, fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "hold_instrument_id", referencedColumnName = "id")
+    private Instrument instrument;
 
-    @Column(name = "instrument_id")
-    private int instrumentId;
-
+    @ManyToOne(targetEntity = FundManager.class, cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @JoinColumn(name = "hold_fund_manager_id", referencedColumnName = "id")
+    public FundManager fundManager;
 }

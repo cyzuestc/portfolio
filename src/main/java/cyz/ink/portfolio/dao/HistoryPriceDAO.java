@@ -18,12 +18,4 @@ import java.util.List;
 
 public interface HistoryPriceDAO extends JpaRepository<HistoryPrice,Integer> {
 
-//     Page<HistoryPrice> findHistoryPricesById(int id, Pageable pageable);
-
-//     @Query(name = "select * from historyprice where instrument_id = ?1",nativeQuery = true)
-//     List<HistoryPrice> findAllByInstrumentId(int id);
-
-    List<HistoryPrice> findAllByInstrumentId(Integer instrumentId);
-
-    HistoryPrice findHistoryPriceByInstrumentIdAndDate(int instrumentId, Date date);
 }

@@ -23,7 +23,7 @@
                     <th>symbol</th>
                     <th>name</th>
                     <th>price</th>
-                    <th>number</th>
+                    <th>quantity</th>
                     <th>sell</th>
                 </tr>
                 </thead>
@@ -44,9 +44,9 @@
                 </tbody>
             </table>
             <ul class="nav nav-tabs ">
-                <li @click="changePortfolioPage('-1')"><a>上一页</a></li>
+                <li @click="changePortfolioPage('-1')"><a>pre</a></li>
                 <li><a>{{portfolioStart+1}}</a></li>
-                <li @click="changePortfolioPage('1')"><a>下一页</a></li>
+                <li @click="changePortfolioPage('1')"><a>next</a></li>
             </ul>
         </div>
 

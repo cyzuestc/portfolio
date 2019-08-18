@@ -62,9 +62,9 @@
     </button>
     <br>
     <ul class="nav nav-tabs">
-        <li @click="changeInstrumentsPage('-1')"><a>上一页</a></li>
+        <li @click="changeInstrumentsPage('-1')"><a>prev</a></li>
         <li><a>{{instrumentStart+1}}</a></li>
-        <li @click="changeInstrumentsPage('1')"><a>下一页</a></li>
+        <li @click="changeInstrumentsPage('1')"><a>next</a></li>
     </ul>
 
     <h2>FundManagers Information</h2>
@@ -97,9 +97,9 @@
     </table>
 
     <ul class="nav nav-tabs ">
-        <li @click="changeFundManagersPage('-1')"><a>上一页</a></li>
+        <li @click="changeFundManagersPage('-1')"><a>prev</a></li>
         <li><a>{{listFundManagerStart+1}}</a></li>
-        <li @click="changeFundManagersPage('1')"><a>下一页</a></li>
+        <li @click="changeFundManagersPage('1')"><a>next</a></li>
     </ul>
 </div>
 </body>
